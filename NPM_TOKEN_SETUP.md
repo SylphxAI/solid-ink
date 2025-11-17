@@ -1,59 +1,46 @@
-# Trusted Publishing Configuration Required
+# NPM Token Publishing Configuration
 
 ## Issue
-E404 errors when publishing packages from GitHub Actions. Provenance is being generated (OIDC works), but packages reject the publish because GitHub Actions workflow is not configured as a trusted publisher on npm.com.
+E404 errors when publishing packages from GitHub Actions. npm CLI was trying to use OIDC authentication (trusted publishing) first, which failed because packages weren't configured as trusted publishers.
 
 ## Root Cause
-Packages need to be configured on npm.com to accept publishing from the GitHub Actions workflow. Trusted publishing (OIDC) eliminates the need for NPM_TOKEN, but requires per-package configuration.
+When `id-token: write` permission is present, npm CLI automatically tries OIDC authentication before falling back to tokens. This caused E404 errors because packages aren't configured as trusted publishers.
 
-## Fix Steps
+Since configuring trusted publishers for hundreds of packages isn't practical, we disabled OIDC to force token-only authentication.
 
-Configure each package on npm.com to trust the GitHub Actions workflow:
+## Solution Applied
 
-### For Each Package
+Removed OIDC/provenance from workflow:
+- ❌ Removed `id-token: write` permission
+- ❌ Removed `NPM_CONFIG_PROVENANCE: true`
+- ✅ Using NPM_TOKEN only for authentication
 
-Repeat for all 5 packages:
-- @sylphx/solid-tui
-- @sylphx/solid-tui-inputs
-- @sylphx/solid-tui-components
-- @sylphx/solid-tui-markdown
-- @sylphx/solid-tui-visual
+## Token Requirements
 
-**Steps:**
+The NPM_TOKEN in GitHub secrets must be a **granular access token** with:
+- **Permissions**: Read and write
+- **Packages**: All packages in @sylphx scope (or select individually)
 
-1. Go to package settings on npm.com:
-   - `https://www.npmjs.com/package/@sylphx/PACKAGE_NAME/access`
-   - Or navigate: Package page → Settings → Publishing access
+## Verify Token
 
-2. Find "Trusted publishers" section
-
-3. Click "Add trusted publisher"
-
-4. Select "GitHub Actions"
-
-5. Fill in the form:
-   - **GitHub user or organization**: `SylphxAI`
-   - **Repository name**: `solid-tui`
-   - **Workflow filename**: `release.yml`
-   - **Environment name**: (leave blank)
-
-6. Click "Add"
-
-7. Verify configuration saved successfully
-
-### After Configuration
-
-Once all 5 packages are configured, trigger a new release:
-
+Test the token locally:
 ```bash
-git commit --allow-empty -m "chore: trigger release after trusted publisher setup"
-git push
+echo "//registry.npmjs.org/:_authToken=YOUR_TOKEN" > .npmrc
+npm whoami
+npm publish --dry-run
 ```
+
+## Update GitHub Secret
+
+If you need to regenerate the token:
+1. Go to https://www.npmjs.com/settings/YOUR_USERNAME/tokens
+2. Generate new Granular Access Token
+3. Set permissions: Read and write for @sylphx packages
+4. Update https://github.com/SylphxAI/solid-tui/settings/secrets/actions
 
 ## Notes
 
-- ✅ Workflow already has correct OIDC permissions (`id-token: write`)
-- ✅ Provenance is already working (confirmed in logs)
-- ⏳ Just need to authorize the workflow on npm.com
-- 🔒 No NPM_TOKEN needed with trusted publishing (more secure)
-- ♻️ No token expiration to manage
+- Token-only authentication (no OIDC/trusted publishing)
+- No provenance attestations
+- Granular tokens expire after 90 days maximum
+- Set reminder to regenerate before expiration
