@@ -47,7 +47,7 @@ jobs:
           fi
           echo "npm config:"
           npm config get registry
-          npm config get _authToken
+          npm whoami
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
