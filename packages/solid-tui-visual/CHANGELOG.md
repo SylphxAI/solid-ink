@@ -1,5 +1,13 @@
 # @sylphx/solid-tui-visual
 
+## 0.1.4
+
+### Patch Changes
+
+- e2c596b: fix: resolve workspace:\* dependencies in published packages
+
+  Now using prepare-publish script to replace workspace:\* with actual versions before publishing.
+
 ## 0.1.3
 
 ### Patch Changes
