@@ -1,0 +1,17 @@
+name: Deprecate Old Version
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deprecate:
+    name: Deprecate 0.1.0
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deprecate broken version
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          npm deprecate @sylphx/solid-tui-inputs@0.1.0 "Broken dependency - use 0.1.4+"
+          echo "Deprecated successfully"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
