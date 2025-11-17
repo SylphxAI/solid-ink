@@ -1,7 +1,8 @@
 import { Writable } from 'node:stream';
 import type { JSX } from 'solid-js';
-import { type AppContext, AppProvider } from './hooks/useApp.jsx';
-import { FocusProvider } from './hooks/useFocus.jsx';
+import { createSignal } from 'solid-js';
+import type { AppContext } from './hooks/useApp.jsx';
+import type { FocusManager } from './hooks/useFocus.jsx';
 import { createSolidInkRenderer } from './reconciler.js';
 import { Renderer } from './renderer.js';
 
@@ -95,14 +96,50 @@ export function render(component: () => JSX.Element): RenderResult {
   };
 
   const mount = (comp: () => JSX.Element) => {
-    solidRenderer.render(
-      () => (
-        <AppProvider value={appContext}>
-          <FocusProvider autoFocus={false}>{comp()}</FocusProvider>
-        </AppProvider>
-      ),
-      renderer.getRoot(),
-    );
+    // Inject global contexts for Bun compatibility
+    (globalThis as any).__SOLID_TUI_APP_CONTEXT__ = appContext;
+
+    const [focusedId, setFocusedId] = createSignal<symbol | null>(null);
+    const focusableIds: symbol[] = [];
+    const focusManager: FocusManager = {
+      register: (id: symbol) => {
+        if (!focusableIds.includes(id)) {
+          focusableIds.push(id);
+        }
+      },
+      unregister: (id: symbol) => {
+        const index = focusableIds.indexOf(id);
+        if (index !== -1) {
+          focusableIds.splice(index, 1);
+          if (focusedId() === id) {
+            setFocusedId(null);
+          }
+        }
+      },
+      focus: (id: symbol) => {
+        if (focusableIds.includes(id)) {
+          setFocusedId(id);
+        }
+      },
+      focusNext: () => {
+        const currentIndex = focusedId() ? focusableIds.indexOf(focusedId()!) : -1;
+        const nextIndex = (currentIndex + 1) % focusableIds.length;
+        if (focusableIds[nextIndex]) {
+          setFocusedId(focusableIds[nextIndex]);
+        }
+      },
+      focusPrevious: () => {
+        const currentIndex = focusedId() ? focusableIds.indexOf(focusedId()!) : -1;
+        const prevIndex = currentIndex <= 0 ? focusableIds.length - 1 : currentIndex - 1;
+        if (focusableIds[prevIndex]) {
+          setFocusedId(focusableIds[prevIndex]);
+        }
+      },
+      focusedId,
+    };
+    (globalThis as any).__SOLID_TUI_FOCUS_MANAGER__ = focusManager;
+
+    solidRenderer.render(comp, renderer.getRoot());
     renderer.render();
   };
 

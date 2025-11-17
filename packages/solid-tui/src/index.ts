@@ -13,7 +13,7 @@ export { Transform } from './components/Transform.jsx';
 export type { AppContext } from './hooks/useApp.jsx';
 export { useApp } from './hooks/useApp.jsx';
 export type { FocusManager, UseFocusOptions } from './hooks/useFocus.jsx';
-export { FocusProvider, useFocus, useFocusManager } from './hooks/useFocus.jsx';
+export { useFocus, useFocusManager } from './hooks/useFocus.jsx';
 export type { InputHandler, Key } from './hooks/useInput.js';
 export { useInput } from './hooks/useInput.js';
 export { useStderr } from './hooks/useStderr.js';

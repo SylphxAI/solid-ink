@@ -9,14 +9,16 @@ export interface AppContext {
 
 const AppCtx = createContext<AppContext>();
 
-export function AppProvider(props: { value: AppContext; children: any }) {
-  return <AppCtx.Provider value={props.value}>{props.children}</AppCtx.Provider>;
-}
+// AppProvider removed - we use global injection instead to avoid Bun JSX issues
 
 export function useApp(): AppContext {
+  // Try context first (for Node.js compatibility)
   const ctx = useContext(AppCtx);
-  if (!ctx) {
-    throw new Error('useApp must be used within an App context');
-  }
-  return ctx;
+  if (ctx) return ctx;
+
+  // Fall back to global (for Bun compatibility)
+  const globalCtx = (globalThis as any).__SOLID_TUI_APP_CONTEXT__;
+  if (globalCtx) return globalCtx;
+
+  throw new Error('useApp must be used within an App context');
 }

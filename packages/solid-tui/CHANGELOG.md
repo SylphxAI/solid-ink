@@ -1,5 +1,11 @@
 # @sylphx/solid-tui
 
+## 1.0.4
+
+### Patch Changes
+
+- Fix Bun compatibility by removing Provider components and using global context injection
+
 ## 1.0.3
 
 ### Patch Changes
