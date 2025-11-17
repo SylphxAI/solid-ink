@@ -54,7 +54,7 @@ function ListBenchmark() {
     const maxUpdateTime = Math.max(...currentStats.updates);
     const minUpdateTime = Math.min(...currentStats.updates);
 
-    console.log('\n=== Solid-Ink Benchmark Results ===');
+    console.log('\n=== Solid-TUI Benchmark Results ===');
     console.log(`Total Duration: ${totalTime}ms`);
     console.log(`Total Updates: ${currentStats.updateCount}`);
     console.log(`Average Update Time: ${avgUpdateTime.toFixed(2)}ms`);
@@ -68,7 +68,7 @@ function ListBenchmark() {
     fs.writeFileSync(
       path.join(process.cwd(), 'benchmark/solid-results.json'),
       JSON.stringify({
-        framework: 'solid-ink',
+        framework: 'solid-tui',
         totalTime,
         updateCount: currentStats.updateCount,
         avgUpdateTime,
@@ -95,7 +95,7 @@ function ListBenchmark() {
   return (
     <Box flexDirection="column" padding={1}>
       <Text bold color="cyan">
-        Solid-Ink Benchmark
+        Solid-TUI Benchmark
       </Text>
 
       <Box marginTop={1}>

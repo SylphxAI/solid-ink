@@ -1,5 +1,5 @@
 {
-  "framework": "solid-ink",
+  "framework": "solid-tui",
   "totalTime": 10002,
   "updateCount": 99,
   "avgUpdateTime": 0.010624606060587488,

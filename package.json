@@ -1,17 +1,17 @@
 {
-  "name": "@sylphx/solid-ink",
-  "version": "1.1.0",
-  "description": "SolidJS renderer for terminal/CLI applications with fine-grained reactivity",
+  "name": "@sylphx/solid-tui",
+  "version": "1.0.0",
+  "description": "SolidJS renderer for blazing fast terminal user interfaces with fine-grained reactivity",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SylphxAI/solid-ink.git"
+    "url": "https://github.com/SylphxAI/solid-tui.git"
   },
-  "homepage": "https://solid-ink.sylphx.com",
+  "homepage": "https://solid-tui.sylphx.com",
   "bugs": {
-    "url": "https://github.com/SylphxAI/solid-ink/issues"
+    "url": "https://github.com/SylphxAI/solid-tui/issues"
   },
   "exports": {
     ".": {

@@ -1,4 +1,4 @@
-# @sylphx/solid-ink
+# @sylphx/solid-tui
 
 ## 1.1.0
 

@@ -63,7 +63,7 @@ Or use Vercel GitHub integration for auto-deployment.
 ### Configure custom domain
 
 In Vercel dashboard:
-1. Add domain: `solid-ink.sylphx.com`
+1. Add domain: `solid-tui.sylphx.com`
 2. Add DNS records as shown
 3. Done!
 

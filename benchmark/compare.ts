@@ -33,7 +33,7 @@ function compareResults() {
   }
 
   console.log('\n╔════════════════════════════════════════════════════════╗');
-  console.log('║          Solid-Ink vs React-Ink Benchmark             ║');
+  console.log('║          Solid-TUI vs React-Ink Benchmark             ║');
   console.log('╚════════════════════════════════════════════════════════╝\n');
 
   console.log('Test Scenario: 100 items, 5 random updates every 100ms for 10s\n');
@@ -48,7 +48,7 @@ function compareResults() {
   };
 
   console.log('┌─────────────────────────┬──────────────┬──────────────┬──────────────┐');
-  console.log('│ Metric                  │ React-Ink    │ Solid-Ink    │ Improvement  │');
+  console.log('│ Metric                  │ React-Ink    │ Solid-TUI    │ Improvement  │');
   console.log('├─────────────────────────┼──────────────┼──────────────┼──────────────┤');
 
   console.log(
@@ -71,7 +71,7 @@ function compareResults() {
 
   // Calculate overall speedup
   const speedup = reactResults.avgUpdateTime / solidResults.avgUpdateTime;
-  console.log(`⚡ Solid-Ink is ${speedup.toFixed(1)}x faster on average\n`);
+  console.log(`⚡ Solid-TUI is ${speedup.toFixed(1)}x faster on average\n`);
 
   // Generate markdown report
   const markdown = `# Benchmark Results
@@ -84,7 +84,7 @@ function compareResults() {
 
 ## Results
 
-| Metric | React-Ink | Solid-Ink | Improvement |
+| Metric | React-Ink | Solid-TUI | Improvement |
 |--------|-----------|-----------|-------------|
 | Avg Update Time | ${formatTime(reactResults.avgUpdateTime)} | ${formatTime(solidResults.avgUpdateTime)} | **${formatImprovement(reactResults.avgUpdateTime, solidResults.avgUpdateTime)}** |
 | Min Update Time | ${formatTime(reactResults.minUpdateTime)} | ${formatTime(solidResults.minUpdateTime)} | ${formatImprovement(reactResults.minUpdateTime, solidResults.minUpdateTime)} |
@@ -93,7 +93,7 @@ function compareResults() {
 
 ## Summary
 
-⚡ **Solid-Ink is ${speedup.toFixed(1)}x faster** than React-Ink in this benchmark.
+⚡ **Solid-TUI is ${speedup.toFixed(1)}x faster** than React-Ink in this benchmark.
 
 ### Why?
 
@@ -104,7 +104,7 @@ function compareResults() {
 
 ### Key Takeaways
 
-- **Update Time**: Solid-Ink updates are significantly faster due to targeted updates
+- **Update Time**: Solid-TUI updates are significantly faster due to targeted updates
 - **Memory**: Lower memory usage with no Virtual DOM overhead
 - **Scalability**: Performance gap increases with more items (O(1) vs O(n))
 `;

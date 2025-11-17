@@ -1,16 +1,16 @@
-# Solid-Ink
+# Solid-TUI
 
 > SolidJS renderer for building blazing fast terminal/CLI applications
 
-[![npm version](https://img.shields.io/npm/v/@sylphx/solid-ink.svg)](https://www.npmjs.com/package/@sylphx/solid-ink)
+[![npm version](https://img.shields.io/npm/v/@sylphx/solid-tui.svg)](https://www.npmjs.com/package/@sylphx/solid-tui)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Twitter](https://img.shields.io/twitter/follow/SylphxAI?style=social)](https://x.com/SylphxAI)
 
-Solid-Ink brings SolidJS's fine-grained reactivity to terminal UIs. Build interactive CLIs with the performance and simplicity of SolidJS.
+Solid-TUI brings SolidJS's fine-grained reactivity to terminal UIs. Build interactive CLIs with the performance and simplicity of SolidJS.
 
-📚 **[Documentation](https://solid-ink.sylphx.com)** ·
+📚 **[Documentation](https://solid-tui.sylphx.com)** ·
 🐦 **[Twitter](https://x.com/SylphxAI)** ·
-💬 **[Issues](https://github.com/SylphxAI/solid-ink/issues)**
+💬 **[Issues](https://github.com/SylphxAI/solid-tui/issues)**
 
 ## ⚡ Performance First
 
@@ -35,14 +35,14 @@ Solid-Ink brings SolidJS's fine-grained reactivity to terminal UIs. Build intera
 ## 📦 Installation
 
 ```bash
-npm install @sylphx/solid-ink solid-js
+npm install @sylphx/solid-tui solid-js
 ```
 
 ## 🎯 Quick Start
 
 ```tsx
 import { createSignal } from 'solid-js';
-import { render, Box, Text } from '@sylphx/solid-ink';
+import { render, Box, Text } from '@sylphx/solid-tui';
 
 function Counter() {
   const [count, setCount] = createSignal(0);
@@ -64,11 +64,11 @@ Run with:
 npx tsx app.tsx
 ```
 
-## 💡 Why Solid-Ink?
+## 💡 Why Solid-TUI?
 
 ### vs React-Ink
 
-| Feature | Solid-Ink | React-Ink |
+| Feature | Solid-TUI | React-Ink |
 |---------|-----------|-----------|
 | **Update Time** (100 items) | 2.8ms | 12.5ms |
 | **Memory Usage** | 3.5MB | 8.2MB |
@@ -77,7 +77,7 @@ npx tsx app.tsx
 
 When updating 1 item in a 1000-item list:
 - **React-Ink**: Diffs all 1000 items (O(n))
-- **Solid-Ink**: Updates 1 item (O(1))
+- **Solid-TUI**: Updates 1 item (O(1))
 
 [Full benchmark results →](./benchmark/README.md)
 
@@ -102,7 +102,7 @@ When updating 1 item in a 1000-item list:
 
 ```tsx
 import { createSignal, For } from 'solid-js';
-import { render, Box, Text, useInput } from '@sylphx/solid-ink';
+import { render, Box, Text, useInput } from '@sylphx/solid-tui';
 
 function TodoList() {
   const items = ['Buy milk', 'Walk dog', 'Write code'];
@@ -135,7 +135,7 @@ render(() => <TodoList />);
 
 ```tsx
 import { createSignal } from 'solid-js';
-import { render, Box, Text, Spacer } from '@sylphx/solid-ink';
+import { render, Box, Text, Spacer } from '@sylphx/solid-tui';
 
 function Dashboard() {
   const [cpu, setCpu] = createSignal(0);
@@ -275,7 +275,7 @@ cleanup();
 
 ## 🏗️ How It Works
 
-Solid-Ink uses SolidJS's Universal Renderer API to target terminal output:
+Solid-TUI uses SolidJS's Universal Renderer API to target terminal output:
 
 ```
 SolidJS Component
@@ -318,7 +318,7 @@ npm install
 # Run React-Ink benchmark
 npm run bench:react
 
-# Run Solid-Ink benchmark
+# Run Solid-TUI benchmark
 npm run bench:solid
 
 # Compare results
@@ -329,7 +329,7 @@ npm run bench:compare
 
 ### Results
 
-| Metric | React-Ink | Solid-Ink | Improvement |
+| Metric | React-Ink | Solid-TUI | Improvement |
 |--------|-----------|-----------|-------------|
 | Avg Update Time | 12.5ms | 2.8ms | **4.5x faster** ⚡ |
 | Memory Usage | 8.2MB | 3.5MB | **57% less** 📉 |

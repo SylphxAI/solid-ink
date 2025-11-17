@@ -1,6 +1,6 @@
 # Benchmark
 
-Performance comparison between Solid-Ink and React-Ink.
+Performance comparison between Solid-TUI and React-Ink.
 
 ## Test Scenario
 
@@ -15,8 +15,8 @@ A common CLI use case: a list with frequent updates.
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/solid-ink
-cd solid-ink
+git clone https://github.com/yourusername/solid-tui
+cd solid-tui
 
 # Install dependencies
 npm install
@@ -24,7 +24,7 @@ cd benchmark && npm install
 
 # Run benchmarks
 npm run bench:react   # React-Ink
-npm run bench:solid   # Solid-Ink
+npm run bench:solid   # Solid-TUI
 npm run bench:compare # Compare results
 ```
 
@@ -37,7 +37,7 @@ Your results may vary based on hardware and system load.
 
 ### Update Performance
 
-| Metric | React-Ink | Solid-Ink | Improvement |
+| Metric | React-Ink | Solid-TUI | Improvement |
 |--------|-----------|-----------|-------------|
 | **Average Update Time** | 12.5ms | 2.8ms | **4.5x faster** ⚡ |
 | **Min Update Time** | 8.2ms | 1.9ms | **4.3x faster** |
@@ -45,7 +45,7 @@ Your results may vary based on hardware and system load.
 
 ### Memory Usage
 
-| Metric | React-Ink | Solid-Ink | Improvement |
+| Metric | React-Ink | Solid-TUI | Improvement |
 |--------|-----------|-----------|-------------|
 | **Heap Memory** | 8.2 MB | 3.5 MB | **57% less** 📉 |
 
@@ -54,11 +54,11 @@ Your results may vary based on hardware and system load.
 | Framework | Minified | Gzipped |
 |-----------|----------|---------|
 | React-Ink | 98 KB | 34 KB |
-| Solid-Ink | 52 KB | 18 KB |
+| Solid-TUI | 52 KB | 18 KB |
 
 **47% smaller bundle**
 
-## Why is Solid-Ink Faster?
+## Why is Solid-TUI Faster?
 
 ### 1. Fine-grained Updates
 
@@ -68,7 +68,7 @@ Update → Re-render → Generate VDOM (100 nodes) →
 Diff (100 nodes) → Update (2 nodes)
 ```
 
-**Solid-Ink** (O(1) complexity):
+**Solid-TUI** (O(1) complexity):
 ```
 Update → Notify signals (2 nodes) → Update (2 nodes)
 ```
@@ -80,7 +80,7 @@ React-Ink maintains 3 data structures:
 - Virtual DOM tree
 - Fiber tree (internal)
 
-Solid-Ink maintains 1:
+Solid-TUI maintains 1:
 - Real node tree + lightweight signal graph
 
 ### 3. Compile-time Optimization
@@ -101,7 +101,7 @@ React determines dependencies at runtime through reconciliation.
 
 Performance gap increases with more items:
 
-| Items | React-Ink Avg | Solid-Ink Avg | Speedup |
+| Items | React-Ink Avg | Solid-TUI Avg | Speedup |
 |-------|---------------|---------------|---------|
 | 10 | 3.2ms | 1.8ms | 1.8x |
 | 100 | 12.5ms | 2.8ms | 4.5x |
@@ -109,7 +109,7 @@ Performance gap increases with more items:
 | 1000 | 89.7ms | 3.4ms | 26.4x |
 
 ::: tip
-With 1000 items, Solid-Ink is over **26x faster**!
+With 1000 items, Solid-TUI is over **26x faster**!
 :::
 
 ## Real-world Impact
@@ -119,7 +119,7 @@ With 1000 items, Solid-Ink is over **26x faster**!
 At 60 FPS, each frame has 16.67ms budget:
 
 - **React-Ink** (12.5ms): ~73% of frame budget used
-- **Solid-Ink** (2.8ms): ~17% of frame budget used
+- **Solid-TUI** (2.8ms): ~17% of frame budget used
 
 More headroom for:
 - Layout calculations
@@ -131,7 +131,7 @@ More headroom for:
 Measured during 100-item benchmark:
 
 - **React-Ink**: 15-20% CPU
-- **Solid-Ink**: 5-8% CPU
+- **Solid-TUI**: 5-8% CPU
 
 **62% less CPU usage** = Better battery life and system responsiveness.
 
@@ -140,7 +140,7 @@ Measured during 100-item benchmark:
 Performance with 5000 items:
 
 - **React-Ink**: Noticeably laggy, dropped frames
-- **Solid-Ink**: Smooth, responsive
+- **Solid-TUI**: Smooth, responsive
 
 ## Memory Efficiency
 
@@ -151,7 +151,7 @@ React-Ink: Sawtooth pattern (GC pressure)
   ↗↘↗↘↗↘
 8MB ━━━━━━━━
 
-Solid-Ink: Stable, low memory
+Solid-TUI: Stable, low memory
   ━━━━━━━━
 3MB
 ```
@@ -183,7 +183,7 @@ Measures:
 - Memory after 10 seconds
 - Min/max/avg update times
 
-[View benchmark source →](https://github.com/yourusername/solid-ink/tree/main/benchmark)
+[View benchmark source →](https://github.com/yourusername/solid-tui/tree/main/benchmark)
 
 ## Reproducing Results
 
@@ -206,13 +206,13 @@ npm run bench:compare
 
 ## Conclusion
 
-Solid-Ink is demonstrably faster than React-Ink:
+Solid-TUI is demonstrably faster than React-Ink:
 
 - ⚡ **4.5x faster** updates on average
 - 📉 **57% less** memory usage
 - 📦 **47% smaller** bundle size
 - 🔋 **62% less** CPU usage
 
-The performance gap **increases with scale**, making Solid-Ink ideal for data-heavy CLIs.
+The performance gap **increases with scale**, making Solid-TUI ideal for data-heavy CLIs.
 
-[Try Solid-Ink →](/guide/getting-started)
+[Try Solid-TUI →](/guide/getting-started)

@@ -71,7 +71,7 @@ Shows fine-grained reactivity with 100 items. Demonstrates:
 
 ## Running Examples
 
-Each example demonstrates different aspects of solid-ink:
+Each example demonstrates different aspects of solid-tui:
 
 1. **Start simple**: `basic.tsx` for fundamental concepts
 2. **Learn layout**: `layout.tsx` for flexbox and lists
@@ -109,7 +109,7 @@ import { render, Box, Text } from '../src/index.js';
 function MyApp() {
   return (
     <Box padding={2}>
-      <Text bold color="cyan">Hello Solid-Ink!</Text>
+      <Text bold color="cyan">Hello Solid-TUI!</Text>
     </Box>
   );
 }

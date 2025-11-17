@@ -1,4 +1,4 @@
-# Why Solid-Ink?
+# Why Solid-TUI?
 
 ## The Problem with React-Ink
 
@@ -28,9 +28,9 @@ function List() {
 
 For 1000 items, this means **checking 1000 nodes** to update **2 nodes**.
 
-## The Solid-Ink Approach
+## The Solid-TUI Approach
 
-Solid-Ink uses fine-grained reactivity:
+Solid-TUI uses fine-grained reactivity:
 
 ```tsx
 function List() {
@@ -63,7 +63,7 @@ For 1000 items with 1 change: **Update 2 nodes**. That's it.
 
 Test: 100 items, 5 random updates every 100ms for 10 seconds
 
-| Metric | React-Ink | Solid-Ink | Improvement |
+| Metric | React-Ink | Solid-TUI | Improvement |
 |--------|-----------|-----------|-------------|
 | Avg Update Time | 12.5ms | 2.8ms | **4.5x faster** |
 | Memory Usage | 8.2MB | 3.5MB | **57% less** |
@@ -77,12 +77,12 @@ As the number of items increases:
 
 ```
 React-Ink:  O(n) - checks all items
-Solid-Ink:  O(1) - updates only changed items
+Solid-TUI:  O(1) - updates only changed items
 ```
 
 With 1000 items:
 - React-Ink: ~50ms per update
-- Solid-Ink: ~3ms per update
+- Solid-TUI: ~3ms per update
 
 **~16x faster** at scale.
 
@@ -96,7 +96,7 @@ State → Component → VDOM → Diff → Real Nodes
         (overhead)  (copy) (slow)
 ```
 
-**Solid-Ink:**
+**Solid-TUI:**
 ```
 Signal → Real Nodes
          (direct)
@@ -126,7 +126,7 @@ Dependencies tracked at **compile time**, not runtime.
 - Virtual DOM tree
 - Fiber tree (internal)
 
-**Solid-Ink stores:**
+**Solid-TUI stores:**
 - Real node tree
 - Lightweight dependency graph
 
@@ -185,7 +185,7 @@ const handleClick = () => {
 60 FPS = 16ms per frame
 
 - React-Ink: 10-15ms updates → drops frames
-- Solid-Ink: 2-3ms updates → smooth as butter
+- Solid-TUI: 2-3ms updates → smooth as butter
 
 ### 2. Lower CPU Usage
 
@@ -193,7 +193,7 @@ Less work = less CPU:
 
 ```
 React-Ink: 15-20% CPU (100 items)
-Solid-Ink: 5-8% CPU (100 items)
+Solid-TUI: 5-8% CPU (100 items)
 ```
 
 Better battery life, lower system load.
@@ -203,7 +203,7 @@ Better battery life, lower system load.
 With 5000 items:
 
 - React-Ink: Noticeably laggy
-- Solid-Ink: Still responsive
+- Solid-TUI: Still responsive
 
 ### 4. Smaller Bundle
 
@@ -211,7 +211,7 @@ With 5000 items:
 - Faster startup
 - Less memory overhead
 
-## When to Use Solid-Ink
+## When to Use Solid-TUI
 
 ### Perfect For:
 
@@ -237,7 +237,7 @@ Similar API makes migration easy:
 import { useState } from 'react';
 const [state, setState] = useState(0);
 
-// Solid-Ink
+// Solid-TUI
 import { createSignal } from 'solid-js';
 const [state, setState] = createSignal(0);
 // Just add () when reading: state()
@@ -253,7 +253,7 @@ Main differences:
 
 ## Conclusion
 
-Solid-Ink brings SolidJS's performance to terminal UIs:
+Solid-TUI brings SolidJS's performance to terminal UIs:
 
 - **3-5x faster** updates
 - **40-60% less** memory

@@ -8,7 +8,7 @@
 - [ ] Add NPM_TOKEN to GitHub Secrets
   - Generate: https://www.npmjs.com/settings/[username]/tokens/new
   - Type: "Automation" token
-  - Add to: https://github.com/SylphxAI/solid-ink/settings/secrets/actions
+  - Add to: https://github.com/SylphxAI/solid-tui/settings/secrets/actions
 
 ### 2. Vercel Setup
 ```bash
@@ -20,7 +20,7 @@ vercel --prod  # Deploy to production
 ```
 
 Configure custom domain in Vercel:
-- Domain: `solid-ink.sylphx.com`
+- Domain: `solid-tui.sylphx.com`
 - Follow DNS instructions from Vercel
 
 ### 3. GitHub Repository Settings
@@ -75,12 +75,12 @@ gh release create v1.0.0 --generate-notes
 ## Post-release
 
 ### 1. Verify NPM Package
-- [ ] Check package page: https://www.npmjs.com/package/@sylphx/solid-ink
-- [ ] Test installation: `npm install @sylphx/solid-ink`
+- [ ] Check package page: https://www.npmjs.com/package/@sylphx/solid-tui
+- [ ] Test installation: `npm install @sylphx/solid-tui`
 - [ ] Verify exports work
 
 ### 2. Verify Documentation
-- [ ] Docs site live: https://solid-ink.sylphx.com
+- [ ] Docs site live: https://solid-tui.sylphx.com
 - [ ] All links work
 - [ ] Examples display correctly
 
@@ -88,7 +88,7 @@ gh release create v1.0.0 --generate-notes
 
 **Twitter (@SylphxAI):**
 ```
-🎉 Solid-Ink v1.0.0 is here!
+🎉 Solid-TUI v1.0.0 is here!
 
 SolidJS-powered terminal UIs with:
 ⚡ 2x faster than React-Ink
@@ -96,10 +96,10 @@ SolidJS-powered terminal UIs with:
 📦 50% smaller bundle
 🔥 Fine-grained reactivity
 
-npm install @sylphx/solid-ink
+npm install @sylphx/solid-tui
 
-Docs: https://solid-ink.sylphx.com
-Repo: https://github.com/SylphxAI/solid-ink
+Docs: https://solid-tui.sylphx.com
+Repo: https://github.com/SylphxAI/solid-tui
 
 #SolidJS #CLI #TypeScript
 ```
@@ -121,14 +121,14 @@ Repo: https://github.com/SylphxAI/solid-ink
 
 ### First Week
 - [ ] Watch for issues
-- [ ] Monitor download stats: https://npm-stat.com/charts.html?package=@sylphx/solid-ink
+- [ ] Monitor download stats: https://npm-stat.com/charts.html?package=@sylphx/solid-tui
 - [ ] Respond to questions/feedback
 - [ ] Fix critical bugs immediately
 
 ### GitHub Badge
 Add to README if desired:
 ```markdown
-[![Downloads](https://img.shields.io/npm/dm/@sylphx/solid-ink.svg)](https://www.npmjs.com/package/@sylphx/solid-ink)
+[![Downloads](https://img.shields.io/npm/dm/@sylphx/solid-tui.svg)](https://www.npmjs.com/package/@sylphx/solid-tui)
 ```
 
 ## Next Steps
@@ -178,7 +178,7 @@ npm pack --dry-run
 - Try manual publish: `npm publish --access public`
 
 ### GitHub Actions Failed
-- Check logs: https://github.com/SylphxAI/solid-ink/actions
+- Check logs: https://github.com/SylphxAI/solid-tui/actions
 - Verify NPM_TOKEN secret is set
 - Re-run failed jobs
 

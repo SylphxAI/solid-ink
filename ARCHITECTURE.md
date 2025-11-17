@@ -2,7 +2,7 @@
 
 ## Overview
 
-Solid-Ink is a terminal UI renderer that leverages SolidJS's fine-grained reactivity system to achieve optimal performance without virtual DOM overhead.
+Solid-TUI is a terminal UI renderer that leverages SolidJS's fine-grained reactivity system to achieve optimal performance without virtual DOM overhead.
 
 ## Core Components
 
@@ -86,7 +86,7 @@ Write to terminal (if changed)
 Signal change → Component re-render → Reconcile entire tree → Diff nodes → Update
 ```
 
-**Solid-Ink:**
+**Solid-TUI:**
 ```
 Signal change → Update specific node → Schedule render → Only redraw changed output
 ```
@@ -110,7 +110,7 @@ function List() {
 
 When `selected` changes:
 - **React-Ink**: Re-renders List → Re-renders all 1000 items → Diffs 1000 nodes
-- **Solid-Ink**: Updates 2 Text nodes (old selected + new selected)
+- **Solid-TUI**: Updates 2 Text nodes (old selected + new selected)
 
 ## Layout System
 
@@ -245,7 +245,7 @@ Called on unmount to prevent memory leaks.
 
 ## Comparison to React-Ink
 
-| Aspect | Solid-Ink | React-Ink |
+| Aspect | Solid-TUI | React-Ink |
 |--------|-----------|-----------|
 | **Renderer** | Custom via solid-js/universal | react-reconciler |
 | **Updates** | Fine-grained signals | Virtual DOM diffing |
@@ -265,4 +265,4 @@ Called on unmount to prevent memory leaks.
 
 ## Conclusion
 
-Solid-Ink demonstrates that fine-grained reactivity can significantly improve terminal UI performance by eliminating virtual DOM overhead and reconciliation. The architecture is simple, leveraging SolidJS's compiler-based reactivity and Yoga's battle-tested layout engine.
+Solid-TUI demonstrates that fine-grained reactivity can significantly improve terminal UI performance by eliminating virtual DOM overhead and reconciliation. The architecture is simple, leveraging SolidJS's compiler-based reactivity and Yoga's battle-tested layout engine.

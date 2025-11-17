@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# Solid-Ink Quick Start Script
+# Solid-TUI Quick Start Script
 
-echo "🚀 Solid-Ink Quick Start"
+echo "🚀 Solid-TUI Quick Start"
 echo ""
 
 # Check if in correct directory
 if [ ! -f "package.json" ]; then
   echo "❌ Error: package.json not found"
-  echo "Please run this script from the solid-ink directory"
+  echo "Please run this script from the solid-tui directory"
   exit 1
 fi
 

@@ -1,5 +1,5 @@
 {
-  "name": "solid-ink-benchmark",
+  "name": "solid-tui-benchmark",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -12,7 +12,7 @@
   "dependencies": {
     "ink": "^4.4.1",
     "react": "^18.2.0",
-    "solid-ink": "file:..",
+    "solid-tui": "file:..",
     "solid-js": "^1.8.0"
   },
   "devDependencies": {

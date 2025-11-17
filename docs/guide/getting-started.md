@@ -2,19 +2,19 @@
 
 ## Installation
 
-Install Solid-Ink and SolidJS:
+Install Solid-TUI and SolidJS:
 
 ::: code-group
 ```bash [npm]
-npm install @sylphx/solid-ink solid-js
+npm install @sylphx/solid-tui solid-js
 ```
 
 ```bash [yarn]
-yarn add @sylphx/solid-ink solid-js
+yarn add @sylphx/solid-tui solid-js
 ```
 
 ```bash [pnpm]
-pnpm add @sylphx/solid-ink solid-js
+pnpm add @sylphx/solid-tui solid-js
 ```
 :::
 
@@ -23,12 +23,12 @@ pnpm add @sylphx/solid-ink solid-js
 Create a file `app.tsx`:
 
 ```tsx
-import { render, Box, Text } from 'solid-ink';
+import { render, Box, Text } from 'solid-tui';
 
 function App() {
   return (
     <Box padding={2}>
-      <Text color="green">Hello from Solid-Ink!</Text>
+      <Text color="green">Hello from Solid-TUI!</Text>
     </Box>
   );
 }
@@ -64,7 +64,7 @@ Use SolidJS's `createSignal` for reactive state:
 
 ```tsx
 import { createSignal } from 'solid-js';
-import { render, Box, Text } from '@sylphx/solid-ink';
+import { render, Box, Text } from '@sylphx/solid-tui';
 
 function Counter() {
   const [count, setCount] = createSignal(0);
@@ -90,7 +90,7 @@ Remember to call signals as functions: `count()` not `count`
 Use `<Box>` for layout with flexbox properties:
 
 ```tsx
-import { render, Box, Text } from 'solid-ink';
+import { render, Box, Text } from 'solid-tui';
 
 function Layout() {
   return (
@@ -118,7 +118,7 @@ Use the `useInput` hook for keyboard input:
 
 ```tsx
 import { createSignal } from 'solid-js';
-import { render, Box, Text, useInput } from '@sylphx/solid-ink';
+import { render, Box, Text, useInput } from '@sylphx/solid-tui';
 
 function App() {
   const [key, setKey] = createSignal('');

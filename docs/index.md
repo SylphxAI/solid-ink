@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: Solid-Ink
+  name: Solid-TUI
   text: Terminal UI with SolidJS
   tagline: Fine-grained reactivity for blazing fast CLI applications
   actions:
@@ -10,11 +10,11 @@ hero:
       text: Get Started
       link: /guide/getting-started
     - theme: alt
-      text: Why Solid-Ink?
-      link: /guide/why-solid-ink
+      text: Why Solid-TUI?
+      link: /guide/why-solid-tui
     - theme: alt
       text: View on GitHub
-      link: https://github.com/SylphxAI/solid-ink
+      link: https://github.com/SylphxAI/solid-tui
 
 features:
   - icon: ⚡
@@ -31,7 +31,7 @@ features:
 
   - icon: 🎯
     title: Familiar API
-    details: If you know SolidJS, you already know Solid-Ink. Simple, predictable, and powerful.
+    details: If you know SolidJS, you already know Solid-TUI. Simple, predictable, and powerful.
 
   - icon: 🔧
     title: TypeScript First
@@ -46,7 +46,7 @@ features:
 
 ```tsx
 import { createSignal } from 'solid-js';
-import { render, Box, Text } from '@sylphx/solid-ink';
+import { render, Box, Text } from '@sylphx/solid-tui';
 
 function Counter() {
   const [count, setCount] = createSignal(0);
@@ -65,11 +65,11 @@ function Counter() {
 render(() => <Counter />);
 ```
 
-## Why Solid-Ink?
+## Why Solid-TUI?
 
 ### vs React-Ink
 
-| Feature | Solid-Ink | React-Ink |
+| Feature | Solid-TUI | React-Ink |
 |---------|-----------|-----------|
 | **Reactivity** | Fine-grained (only changed nodes) | Virtual DOM (entire tree) |
 | **Update Time** | ~2-3ms (100 items) | ~10-15ms (100 items) |
@@ -82,14 +82,14 @@ render(() => <Counter />);
 
 When one item changes in a 1000-item list:
 - **React-Ink**: Diffs all 1000 items to find the change
-- **Solid-Ink**: Updates only the 1 changed item
+- **Solid-TUI**: Updates only the 1 changed item
 
 That's the power of fine-grained reactivity.
 
 ## Installation
 
 ```bash
-npm install @sylphx/solid-ink solid-js
+npm install @sylphx/solid-tui solid-js
 ```
 
 [Get Started →](/guide/getting-started)

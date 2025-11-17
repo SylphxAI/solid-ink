@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress';
 
 export default defineConfig({
-  title: 'Solid-Ink',
+  title: 'Solid-TUI',
   description: 'SolidJS renderer for terminal/CLI applications',
   base: '/',
 
@@ -18,9 +18,9 @@ export default defineConfig({
         {
           text: 'Introduction',
           items: [
-            { text: 'What is Solid-Ink?', link: '/guide/what-is-solid-ink' },
+            { text: 'What is Solid-TUI?', link: '/guide/what-is-solid-tui' },
             { text: 'Getting Started', link: '/guide/getting-started' },
-            { text: 'Why Solid-Ink?', link: '/guide/why-solid-ink' },
+            { text: 'Why Solid-TUI?', link: '/guide/why-solid-tui' },
           ],
         },
         {
@@ -66,7 +66,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/SylphxAI/solid-ink' },
+      { icon: 'github', link: 'https://github.com/SylphxAI/solid-tui' },
       { icon: 'twitter', link: 'https://x.com/SylphxAI' },
     ],
 

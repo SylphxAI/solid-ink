@@ -9,7 +9,7 @@ interface BenchStats {
   startTime: number;
 }
 
-console.log('=== Solid-Ink Simple Benchmark ===\n');
+console.log('=== Solid-TUI Simple Benchmark ===\n');
 console.log('Testing fine-grained reactivity...');
 
 const ITEM_COUNT = 100;
@@ -73,7 +73,7 @@ setTimeout(async () => {
   fs.writeFileSync(
     'solid-results.json',
     JSON.stringify({
-      framework: 'solid-ink',
+      framework: 'solid-tui',
       totalTime,
       updateCount,
       avgUpdateTime,

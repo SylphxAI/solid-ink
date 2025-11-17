@@ -19,7 +19,7 @@ function Counter() {
       alignItems="center"
     >
       <Text bold color="cyan">
-        Solid-Ink Counter Example
+        Solid-TUI Counter Example
       </Text>
 
       <Box marginTop={1}>

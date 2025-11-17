@@ -1,13 +1,13 @@
-# Getting Started with Solid-Ink
+# Getting Started with Solid-TUI
 
 ## Installation
 
 ```bash
-npm install solid-ink solid-js
+npm install solid-tui solid-js
 # or
-yarn add solid-ink solid-js
+yarn add solid-tui solid-js
 # or
-pnpm add solid-ink solid-js
+pnpm add solid-tui solid-js
 ```
 
 ## Your First App
@@ -15,12 +15,12 @@ pnpm add solid-ink solid-js
 Create a file `app.tsx`:
 
 ```tsx
-import { render, Box, Text } from 'solid-ink';
+import { render, Box, Text } from 'solid-tui';
 
 function App() {
   return (
     <Box padding={2}>
-      <Text color="green">Hello from Solid-Ink!</Text>
+      <Text color="green">Hello from Solid-TUI!</Text>
     </Box>
   );
 }
@@ -40,7 +40,7 @@ Use SolidJS's `createSignal` for reactive state:
 
 ```tsx
 import { createSignal } from 'solid-js';
-import { render, Box, Text } from 'solid-ink';
+import { render, Box, Text } from 'solid-tui';
 
 function Counter() {
   const [count, setCount] = createSignal(0);
@@ -65,7 +65,7 @@ render(() => <Counter />);
 Use flexbox for layout:
 
 ```tsx
-import { render, Box, Text } from 'solid-ink';
+import { render, Box, Text } from 'solid-tui';
 
 function Layout() {
   return (
@@ -131,7 +131,7 @@ render(() => <Layout />);
 ## Styling Text
 
 ```tsx
-import { render, Box, Text } from 'solid-ink';
+import { render, Box, Text } from 'solid-tui';
 
 function Styles() {
   return (
@@ -159,7 +159,7 @@ render(() => <Styles />);
 
 ```tsx
 import { For } from 'solid-js';
-import { render, Box, Text } from 'solid-ink';
+import { render, Box, Text } from 'solid-tui';
 
 function List() {
   const items = ['Apple', 'Banana', 'Cherry'];
@@ -188,7 +188,7 @@ Use SolidJS's `Show`:
 
 ```tsx
 import { createSignal, Show } from 'solid-js';
-import { render, Box, Text } from 'solid-ink';
+import { render, Box, Text } from 'solid-tui';
 
 function Conditional() {
   const [isLoading, setIsLoading] = createSignal(true);
@@ -214,7 +214,7 @@ render(() => <Conditional />);
 
 ```tsx
 import { createSignal } from 'solid-js';
-import { render, Box, Text, useInput } from 'solid-ink';
+import { render, Box, Text, useInput } from 'solid-tui';
 
 function KeyboardApp() {
   const [lastKey, setLastKey] = createSignal('');
@@ -242,7 +242,7 @@ Use `onCleanup` for cleanup logic:
 
 ```tsx
 import { createSignal, onCleanup } from 'solid-js';
-import { render, Box, Text } from 'solid-ink';
+import { render, Box, Text } from 'solid-tui';
 
 function Timer() {
   const [count, setCount] = createSignal(0);
@@ -269,7 +269,7 @@ render(() => <Timer />);
 ## Loading Spinner
 
 ```tsx
-import { render, Box, Text, Spinner } from 'solid-ink';
+import { render, Box, Text, Spinner } from 'solid-tui';
 
 function Loading() {
   return (
@@ -286,7 +286,7 @@ render(() => <Loading />);
 ## Terminal Dimensions
 
 ```tsx
-import { render, Box, Text, useStdout } from 'solid-ink';
+import { render, Box, Text, useStdout } from 'solid-tui';
 
 function Dimensions() {
   const dimensions = useStdout();
@@ -309,7 +309,7 @@ render(() => <Dimensions />);
 
 ```tsx
 import { createSignal, For } from 'solid-js';
-import { render, Box, Text, useInput } from 'solid-ink';
+import { render, Box, Text, useInput } from 'solid-tui';
 
 function Menu() {
   const items = ['Option 1', 'Option 2', 'Option 3'];
@@ -344,7 +344,7 @@ render(() => <Menu />);
 
 ```tsx
 import { createSignal } from 'solid-js';
-import { render, Box, Text } from 'solid-ink';
+import { render, Box, Text } from 'solid-tui';
 
 function ProgressBar() {
   const [progress, setProgress] = createSignal(0);

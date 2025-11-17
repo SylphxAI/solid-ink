@@ -1,12 +1,12 @@
 # Benchmark
 
-Performance comparison between Solid-Ink and React-Ink.
+Performance comparison between Solid-TUI and React-Ink.
 
 ## Running Benchmarks
 
 ```bash
 # From project root
-cd /tmp/solid-ink
+cd /tmp/solid-tui
 
 # Install dependencies (first time only)
 cd benchmark && npm install && cd ..
@@ -14,7 +14,7 @@ cd benchmark && npm install && cd ..
 # Run React-Ink benchmark
 npm run bench:react
 
-# Run Solid-Ink benchmark
+# Run Solid-TUI benchmark
 npm run bench:solid
 
 # Run both and compare
@@ -39,7 +39,7 @@ The benchmark tests a common CLI use case: a list of items with frequent updates
 
 ## Expected Results
 
-Solid-Ink should show:
+Solid-TUI should show:
 - **3-5x faster** update times (fine-grained reactivity)
 - **40-60% less** memory usage (no Virtual DOM)
 - **More consistent** performance (O(1) vs O(n) complexity)
@@ -55,7 +55,7 @@ Diff 100 nodes → Update changed nodes
 
 Time complexity: **O(n)** where n = number of items
 
-### Solid-Ink Performance
+### Solid-TUI Performance
 
 ```
 Signal Change → Notify subscribers (5 items) →
@@ -64,7 +64,7 @@ Update 5 nodes directly
 
 Time complexity: **O(1)** for each signal change
 
-### Why Solid-Ink is Faster
+### Why Solid-TUI is Faster
 
 1. **No component re-render**: Component function runs once
 2. **No VDOM generation**: No intermediate representation needed
@@ -82,6 +82,6 @@ const DURATION = 10000;      // Total benchmark duration (ms)
 ```
 
 Try these scenarios:
-- **More items** (500-1000): Solid-Ink advantage increases
+- **More items** (500-1000): Solid-TUI advantage increases
 - **Faster updates** (50ms): Tests render loop efficiency
 - **Fewer updates** (1-2): Tests best-case scenarios
