@@ -1,6 +1,6 @@
 {
   "name": "@sylphx/solid-tui-markdown",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Markdown rendering components for solid-tui: Markdown parser and SyntaxHighlight",
   "type": "module",
   "main": "./dist/index.js",
