@@ -91,14 +91,14 @@ export function useFocus(options: UseFocusOptions = {}): { isFocused: Accessor<b
 
   const isFocused = () => manager.focusedId() === id;
 
-  onMount(() => {
-    if (isActive) {
-      manager.register(id);
-      if (autoFocus) {
-        manager.focus(id);
-      }
+  // Register immediately instead of waiting for onMount
+  // This ensures focus works in both browser and universal renderer contexts
+  if (isActive) {
+    manager.register(id);
+    if (autoFocus) {
+      manager.focus(id);
     }
-  });
+  }
 
   onCleanup(() => {
     if (isActive) {
