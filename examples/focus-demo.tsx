@@ -1,24 +1,12 @@
 import { createSignal } from 'solid-js';
-import {
-  render,
-  Box,
-  Text,
-  useApp,
-  useInput,
-  useFocus,
-  FocusProvider,
-} from '../src/index.js';
+import { render, Box, Text, useApp, useInput, useFocus, FocusProvider } from '../src/index.js';
 
 function FocusableItem(props: { label: string }) {
   const { isFocused } = useFocus();
 
   return (
     <Box padding={1}>
-      <Text
-        bold={isFocused()}
-        color={isFocused() ? 'green' : 'white'}
-        dimColor={!isFocused()}
-      >
+      <Text bold={isFocused()} color={isFocused() ? 'green' : 'white'} dimColor={!isFocused()}>
         {isFocused() ? '▶ ' : '  '}
         {props.label}
       </Text>

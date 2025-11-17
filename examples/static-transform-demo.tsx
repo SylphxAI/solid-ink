@@ -1,13 +1,5 @@
 import { createSignal } from 'solid-js';
-import {
-  render,
-  Box,
-  Text,
-  Static,
-  Transform,
-  useApp,
-  useInput,
-} from '../src/index.js';
+import { render, Box, Text, Static, Transform, useApp, useInput } from '../src/index.js';
 
 function App() {
   const app = useApp();

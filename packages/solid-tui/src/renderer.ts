@@ -183,8 +183,8 @@ export class Renderer {
         break;
       case 'flexDirection':
         const directionMap = {
-          'row': this.yoga.FLEX_DIRECTION_ROW,
-          'column': this.yoga.FLEX_DIRECTION_COLUMN,
+          row: this.yoga.FLEX_DIRECTION_ROW,
+          column: this.yoga.FLEX_DIRECTION_COLUMN,
           'row-reverse': this.yoga.FLEX_DIRECTION_ROW_REVERSE,
           'column-reverse': this.yoga.FLEX_DIRECTION_COLUMN_REVERSE,
         };
@@ -193,7 +193,7 @@ export class Renderer {
       case 'justifyContent':
         const justifyMap = {
           'flex-start': this.yoga.JUSTIFY_FLEX_START,
-          'center': this.yoga.JUSTIFY_CENTER,
+          center: this.yoga.JUSTIFY_CENTER,
           'flex-end': this.yoga.JUSTIFY_FLEX_END,
           'space-between': this.yoga.JUSTIFY_SPACE_BETWEEN,
           'space-around': this.yoga.JUSTIFY_SPACE_AROUND,
@@ -203,9 +203,9 @@ export class Renderer {
       case 'alignItems':
         const alignMap = {
           'flex-start': this.yoga.ALIGN_FLEX_START,
-          'center': this.yoga.ALIGN_CENTER,
+          center: this.yoga.ALIGN_CENTER,
           'flex-end': this.yoga.ALIGN_FLEX_END,
-          'stretch': this.yoga.ALIGN_STRETCH,
+          stretch: this.yoga.ALIGN_STRETCH,
         };
         yoga.setAlignItems(alignMap[value as keyof typeof alignMap]);
         break;

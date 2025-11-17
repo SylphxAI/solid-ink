@@ -23,10 +23,7 @@ describe('Reconciler', () => {
   });
 
   it('renders basic component', () => {
-    solidRenderer.render(
-      () => 'Hello World',
-      renderer.getRoot()
-    );
+    solidRenderer.render(() => 'Hello World', renderer.getRoot());
 
     expect(renderer.getRoot().children.length).toBeGreaterThan(0);
   });
@@ -34,10 +31,7 @@ describe('Reconciler', () => {
   it('renders component with reactive signal', () => {
     const [count, setCount] = createSignal(0);
 
-    solidRenderer.render(
-      () => `Count: ${count()}`,
-      renderer.getRoot()
-    );
+    solidRenderer.render(() => `Count: ${count()}`, renderer.getRoot());
 
     const initialChildren = renderer.getRoot().children.length;
     setCount(1);
@@ -48,10 +42,7 @@ describe('Reconciler', () => {
   it('handles component updates', () => {
     const [text, setText] = createSignal('initial');
 
-    solidRenderer.render(
-      () => text(),
-      renderer.getRoot()
-    );
+    solidRenderer.render(() => text(), renderer.getRoot());
 
     setText('updated');
 
@@ -59,31 +50,25 @@ describe('Reconciler', () => {
   });
 
   it('handles nested components', () => {
-    solidRenderer.render(
-      () => {
-        const inner = renderer.createElement('box');
-        const text = renderer.createTextNode('nested');
-        renderer.appendChild(inner, text);
-        return inner;
-      },
-      renderer.getRoot()
-    );
+    solidRenderer.render(() => {
+      const inner = renderer.createElement('box');
+      const text = renderer.createTextNode('nested');
+      renderer.appendChild(inner, text);
+      return inner;
+    }, renderer.getRoot());
 
     expect(renderer.getRoot().children.length).toBeGreaterThan(0);
   });
 
   it('handles multiple children', () => {
-    solidRenderer.render(
-      () => {
-        const box = renderer.createElement('box');
-        const text1 = renderer.createTextNode('first');
-        const text2 = renderer.createTextNode('second');
-        renderer.appendChild(box, text1);
-        renderer.appendChild(box, text2);
-        return box;
-      },
-      renderer.getRoot()
-    );
+    solidRenderer.render(() => {
+      const box = renderer.createElement('box');
+      const text1 = renderer.createTextNode('first');
+      const text2 = renderer.createTextNode('second');
+      renderer.appendChild(box, text1);
+      renderer.appendChild(box, text2);
+      return box;
+    }, renderer.getRoot());
 
     expect(renderer.getRoot().children.length).toBeGreaterThan(0);
   });
@@ -91,10 +76,7 @@ describe('Reconciler', () => {
   it('handles conditional rendering', () => {
     const [show, setShow] = createSignal(true);
 
-    solidRenderer.render(
-      () => (show() ? 'visible' : null),
-      renderer.getRoot()
-    );
+    solidRenderer.render(() => (show() ? 'visible' : null), renderer.getRoot());
 
     expect(renderer.getRoot().children.length).toBeGreaterThan(0);
 

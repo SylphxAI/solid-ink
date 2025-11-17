@@ -10,10 +10,7 @@ export interface RenderOptions {
   exitOnCtrlC?: boolean;
 }
 
-export function render(
-  component: () => JSX.Element,
-  options: RenderOptions = {}
-): () => void {
+export function render(component: () => JSX.Element, options: RenderOptions = {}): () => void {
   const { output = process.stdout, exitOnCtrlC = true } = options;
 
   // Hide cursor
@@ -65,7 +62,7 @@ export function render(
         <FocusProvider>{component()}</FocusProvider>
       </AppProvider>
     ),
-    renderer.getRoot()
+    renderer.getRoot(),
   );
 
   // Setup automatic re-rendering on changes

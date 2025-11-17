@@ -39,16 +39,17 @@ function simulateReactUpdate() {
   }
 
   // 2. Simulate re-render - generate new VDOM for ALL items
-  const newVDOM = items.map(item => ({
+  const newVDOM = items.map((item) => ({
     type: 'text',
-    props: { children: `Item ${item.id}: ${item.value}` }
+    props: { children: `Item ${item.id}: ${item.value}` },
   }));
 
   // 3. Simulate diff - compare all items (O(n))
   let changedCount = 0;
   for (let i = 0; i < ITEM_COUNT; i++) {
     // Simulate comparison overhead
-    if (Math.random() > 0.95) { // 5% changed
+    if (Math.random() > 0.95) {
+      // 5% changed
       changedCount++;
     }
   }
@@ -93,15 +94,19 @@ setTimeout(async () => {
   const path = await import('path');
   fs.writeFileSync(
     'react-results.json',
-    JSON.stringify({
-      framework: 'react-ink-simulation',
-      totalTime,
-      updateCount,
-      avgUpdateTime,
-      minUpdateTime,
-      maxUpdateTime,
-      memory: process.memoryUsage().heapUsed,
-    }, null, 2)
+    JSON.stringify(
+      {
+        framework: 'react-ink-simulation',
+        totalTime,
+        updateCount,
+        avgUpdateTime,
+        minUpdateTime,
+        maxUpdateTime,
+        memory: process.memoryUsage().heapUsed,
+      },
+      null,
+      2,
+    ),
   );
 
   console.log('\n✅ Results saved to react-results.json');

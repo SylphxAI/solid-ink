@@ -6,25 +6,22 @@ function Counter() {
 
   // Increment every second
   const interval = setInterval(() => {
-    setCount(c => c + 1);
+    setCount((c) => c + 1);
   }, 1000);
 
   onCleanup(() => clearInterval(interval));
 
   return (
-    <Box
-      flexDirection="column"
-      padding={2}
-      justifyContent="center"
-      alignItems="center"
-    >
+    <Box flexDirection="column" padding={2} justifyContent="center" alignItems="center">
       <Text bold color="cyan">
         Solid-TUI Counter Example
       </Text>
 
       <Box marginTop={1}>
         <Text>Count: </Text>
-        <Text bold color="green">{count()}</Text>
+        <Text bold color="green">
+          {count()}
+        </Text>
       </Box>
 
       <Box marginTop={2}>

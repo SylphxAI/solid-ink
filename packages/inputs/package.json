@@ -1,0 +1,62 @@
+{
+  "name": "@sylphx/solid-tui-inputs",
+  "version": "0.0.0",
+  "description": "Input components for solid-tui: TextInput, SelectInput, ConfirmInput, and more",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SylphxAI/solid-tui.git"
+  },
+  "homepage": "https://solid-tui.sylphx.com",
+  "bugs": {
+    "url": "https://github.com/SylphxAI/solid-tui/issues"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "keywords": [
+    "solidjs",
+    "terminal",
+    "cli",
+    "tui",
+    "input",
+    "select",
+    "form",
+    "prompt"
+  ],
+  "dependencies": {
+    "@sylphx/solid-tui": "workspace:*",
+    "chalk": "^5.3.0",
+    "solid-js": "^1.8.0",
+    "string-width": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@vitest/coverage-v8": "^1.6.1",
+    "typescript": "^5.3.0",
+    "vite-plugin-solid": "^2.11.10",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

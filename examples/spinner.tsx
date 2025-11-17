@@ -16,7 +16,7 @@ function LoadingDemo() {
   ];
 
   const timer = setInterval(() => {
-    setProgress(p => {
+    setProgress((p) => {
       const next = p + 1;
       if (next < steps.length) {
         setStep(steps[next]);
@@ -32,20 +32,17 @@ function LoadingDemo() {
 
   return (
     <Box flexDirection="column" padding={2}>
-      <Text bold color="cyan">Build Progress</Text>
+      <Text bold color="cyan">
+        Build Progress
+      </Text>
 
       <Box marginTop={2} flexDirection="row" alignItems="center">
-        <Show
-          when={loading()}
-          fallback={<Text color="green">✓ </Text>}
-        >
+        <Show when={loading()} fallback={<Text color="green">✓ </Text>}>
           <Spinner type="dots" color="cyan" />
           <Text> </Text>
         </Show>
 
-        <Text bold={loading()}>
-          {step()}
-        </Text>
+        <Text bold={loading()}>{step()}</Text>
       </Box>
 
       <Box marginTop={1}>
@@ -63,7 +60,9 @@ function LoadingDemo() {
 
       <Show when={!loading()}>
         <Box marginTop={2}>
-          <Text color="green" bold>Build successful! 🎉</Text>
+          <Text color="green" bold>
+            Build successful! 🎉
+          </Text>
         </Box>
       </Show>
 

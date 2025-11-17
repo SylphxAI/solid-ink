@@ -31,7 +31,7 @@ function PerformanceDemo() {
       updateCount++;
     }
 
-    setTotalUpdates(t => t + 5);
+    setTotalUpdates((t) => t + 5);
 
     // Calculate updates per second
     const now = Date.now();
@@ -47,29 +47,33 @@ function PerformanceDemo() {
   return (
     <Box flexDirection="column" padding={2}>
       <Box flexDirection="row" alignItems="center">
-        <Text bold color="cyan">Performance Demo</Text>
+        <Text bold color="cyan">
+          Performance Demo
+        </Text>
         <Spacer />
         <Text dim>100 items, 5 random updates every 100ms</Text>
       </Box>
 
       <Box marginTop={1} flexDirection="row">
         <Text>Total Updates: </Text>
-        <Text bold color="green">{totalUpdates()}</Text>
+        <Text bold color="green">
+          {totalUpdates()}
+        </Text>
         <Box marginLeft={3}>
           <Text>Updates/sec: </Text>
-          <Text bold color="yellow">{updatesPerSec()}</Text>
+          <Text bold color="yellow">
+            {updatesPerSec()}
+          </Text>
         </Box>
       </Box>
 
       <Box marginTop={1}>
-        <Text dim>
-          Fine-grained reactivity: Only changed items re-render
-        </Text>
+        <Text dim>Fine-grained reactivity: Only changed items re-render</Text>
       </Box>
 
       <Box marginTop={2} flexDirection="column" height={15}>
         <For each={items.slice(0, 10)}>
-          {item => {
+          {(item) => {
             const [count] = item.count;
             return (
               <Box marginTop={1} flexDirection="row">
@@ -87,17 +91,15 @@ function PerformanceDemo() {
       </Box>
 
       <Box marginTop={2}>
-        <Text bold color="magenta">Key Insight:</Text>
+        <Text bold color="magenta">
+          Key Insight:
+        </Text>
       </Box>
       <Box marginTop={1}>
-        <Text>
-          Each item's count is a separate signal. When one updates,
-        </Text>
+        <Text>Each item's count is a separate signal. When one updates,</Text>
       </Box>
       <Box>
-        <Text>
-          ONLY that specific Text node re-renders - not the entire list!
-        </Text>
+        <Text>ONLY that specific Text node re-renders - not the entire list!</Text>
       </Box>
 
       <Box marginTop={2}>

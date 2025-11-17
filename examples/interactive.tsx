@@ -8,16 +8,12 @@ function InteractiveList() {
 
   useInput((input, key) => {
     if (key.upArrow) {
-      setSelected(s => (s > 0 ? s - 1 : items.length - 1));
+      setSelected((s) => (s > 0 ? s - 1 : items.length - 1));
     } else if (key.downArrow) {
-      setSelected(s => (s < items.length - 1 ? s + 1 : 0));
+      setSelected((s) => (s < items.length - 1 ? s + 1 : 0));
     } else if (key.return || input === ' ') {
       const current = selected();
-      setCompleted(c =>
-        c.includes(current)
-          ? c.filter(i => i !== current)
-          : [...c, current]
-      );
+      setCompleted((c) => (c.includes(current) ? c.filter((i) => i !== current) : [...c, current]));
     } else if (key.escape || input === 'q') {
       process.exit(0);
     }
@@ -25,7 +21,9 @@ function InteractiveList() {
 
   return (
     <Box flexDirection="column" padding={2}>
-      <Text bold color="cyan">Interactive Shopping List</Text>
+      <Text bold color="cyan">
+        Interactive Shopping List
+      </Text>
 
       <Box marginTop={1}>
         <Text dim>Use ↑↓ to navigate, Space/Enter to toggle, Q to quit</Text>
@@ -39,13 +37,9 @@ function InteractiveList() {
 
             return (
               <Box marginTop={1} flexDirection="row" alignItems="center">
-                <Text bold={isSelected()}>
-                  {isSelected() ? '→ ' : '  '}
-                </Text>
+                <Text bold={isSelected()}>{isSelected() ? '→ ' : '  '}</Text>
 
-                <Text bold={isSelected()}>
-                  {isCompleted() ? '[✓] ' : '[ ] '}
-                </Text>
+                <Text bold={isSelected()}>{isCompleted() ? '[✓] ' : '[ ] '}</Text>
 
                 <Text
                   bold={isSelected()}

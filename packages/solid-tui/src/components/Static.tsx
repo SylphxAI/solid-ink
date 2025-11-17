@@ -14,9 +14,7 @@ export interface StaticProps<T> {
 export function Static<T>(props: StaticProps<T>): JSX.Element {
   return (
     <box flexDirection="column" {...props.style}>
-      <For each={props.items as T[]}>
-        {(item, index) => props.children(item, index())}
-      </For>
+      <For each={props.items as T[]}>{(item, index) => props.children(item, index())}</For>
     </box>
   );
 }

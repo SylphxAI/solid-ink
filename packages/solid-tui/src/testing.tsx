@@ -101,7 +101,7 @@ export function render(component: () => JSX.Element): RenderResult {
           <FocusProvider autoFocus={false}>{comp()}</FocusProvider>
         </AppProvider>
       ),
-      renderer.getRoot()
+      renderer.getRoot(),
     );
     renderer.render();
   };

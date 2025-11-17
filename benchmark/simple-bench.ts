@@ -72,15 +72,19 @@ setTimeout(async () => {
   const path = await import('path');
   fs.writeFileSync(
     'solid-results.json',
-    JSON.stringify({
-      framework: 'solid-tui',
-      totalTime,
-      updateCount,
-      avgUpdateTime,
-      minUpdateTime,
-      maxUpdateTime,
-      memory: process.memoryUsage().heapUsed,
-    }, null, 2)
+    JSON.stringify(
+      {
+        framework: 'solid-tui',
+        totalTime,
+        updateCount,
+        avgUpdateTime,
+        minUpdateTime,
+        maxUpdateTime,
+        memory: process.memoryUsage().heapUsed,
+      },
+      null,
+      2,
+    ),
   );
 
   console.log('\n✅ Results saved to solid-results.json');

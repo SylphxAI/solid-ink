@@ -18,7 +18,7 @@ export function Spinner(props: SpinnerProps) {
   const [frame, setFrame] = createSignal(0);
 
   const interval = setInterval(() => {
-    setFrame(f => (f + 1) % frames.length);
+    setFrame((f) => (f + 1) % frames.length);
   }, 80);
 
   onCleanup(() => clearInterval(interval));

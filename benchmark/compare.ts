@@ -52,19 +52,19 @@ function compareResults() {
   console.log('├─────────────────────────┼──────────────┼──────────────┼──────────────┤');
 
   console.log(
-    `│ Avg Update Time         │ ${formatTime(reactResults.avgUpdateTime).padEnd(12)} │ ${formatTime(solidResults.avgUpdateTime).padEnd(12)} │ ${formatImprovement(reactResults.avgUpdateTime, solidResults.avgUpdateTime).padEnd(12)} │`
+    `│ Avg Update Time         │ ${formatTime(reactResults.avgUpdateTime).padEnd(12)} │ ${formatTime(solidResults.avgUpdateTime).padEnd(12)} │ ${formatImprovement(reactResults.avgUpdateTime, solidResults.avgUpdateTime).padEnd(12)} │`,
   );
 
   console.log(
-    `│ Min Update Time         │ ${formatTime(reactResults.minUpdateTime).padEnd(12)} │ ${formatTime(solidResults.minUpdateTime).padEnd(12)} │ ${formatImprovement(reactResults.minUpdateTime, solidResults.minUpdateTime).padEnd(12)} │`
+    `│ Min Update Time         │ ${formatTime(reactResults.minUpdateTime).padEnd(12)} │ ${formatTime(solidResults.minUpdateTime).padEnd(12)} │ ${formatImprovement(reactResults.minUpdateTime, solidResults.minUpdateTime).padEnd(12)} │`,
   );
 
   console.log(
-    `│ Max Update Time         │ ${formatTime(reactResults.maxUpdateTime).padEnd(12)} │ ${formatTime(solidResults.maxUpdateTime).padEnd(12)} │ ${formatImprovement(reactResults.maxUpdateTime, solidResults.maxUpdateTime).padEnd(12)} │`
+    `│ Max Update Time         │ ${formatTime(reactResults.maxUpdateTime).padEnd(12)} │ ${formatTime(solidResults.maxUpdateTime).padEnd(12)} │ ${formatImprovement(reactResults.maxUpdateTime, solidResults.maxUpdateTime).padEnd(12)} │`,
   );
 
   console.log(
-    `│ Memory Usage            │ ${formatMemory(reactResults.memory).padEnd(12)} │ ${formatMemory(solidResults.memory).padEnd(12)} │ ${formatImprovement(reactResults.memory, solidResults.memory).padEnd(12)} │`
+    `│ Memory Usage            │ ${formatMemory(reactResults.memory).padEnd(12)} │ ${formatMemory(solidResults.memory).padEnd(12)} │ ${formatImprovement(reactResults.memory, solidResults.memory).padEnd(12)} │`,
   );
 
   console.log('└─────────────────────────┴──────────────┴──────────────┴──────────────┘\n');

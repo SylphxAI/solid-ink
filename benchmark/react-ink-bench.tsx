@@ -17,7 +17,7 @@ function ListBenchmark() {
       id: i,
       label: `Item ${i}`,
       value: 0,
-    }))
+    })),
   );
 
   const [updateTrigger, setUpdateTrigger] = useState(0);
@@ -69,15 +69,19 @@ function ListBenchmark() {
       const fs = require('fs');
       fs.writeFileSync(
         'benchmark/react-results.json',
-        JSON.stringify({
-          framework: 'react-ink',
-          totalTime,
-          updateCount: stats.updateCount,
-          avgUpdateTime,
-          minUpdateTime,
-          maxUpdateTime,
-          memory: process.memoryUsage().heapUsed,
-        }, null, 2)
+        JSON.stringify(
+          {
+            framework: 'react-ink',
+            totalTime,
+            updateCount: stats.updateCount,
+            avgUpdateTime,
+            minUpdateTime,
+            maxUpdateTime,
+            memory: process.memoryUsage().heapUsed,
+          },
+          null,
+          2,
+        ),
       );
 
       process.exit(0);
@@ -97,9 +101,11 @@ function ListBenchmark() {
 
       <Box marginTop={1}>
         <Text>
-          Updates: {stats.updateCount} | Avg: {(
-            stats.updates.reduce((a, b) => a + b, 0) / Math.max(stats.updates.length, 1)
-          ).toFixed(2)}ms
+          Updates: {stats.updateCount} | Avg:{' '}
+          {(stats.updates.reduce((a, b) => a + b, 0) / Math.max(stats.updates.length, 1)).toFixed(
+            2,
+          )}
+          ms
         </Text>
       </Box>
 

@@ -50,7 +50,8 @@ function ListBenchmark() {
 
     const currentStats = stats();
     const totalTime = Date.now() - currentStats.startTime;
-    const avgUpdateTime = currentStats.updates.reduce((a, b) => a + b, 0) / currentStats.updates.length;
+    const avgUpdateTime =
+      currentStats.updates.reduce((a, b) => a + b, 0) / currentStats.updates.length;
     const maxUpdateTime = Math.max(...currentStats.updates);
     const minUpdateTime = Math.min(...currentStats.updates);
 
@@ -67,15 +68,19 @@ function ListBenchmark() {
     const path = require('path');
     fs.writeFileSync(
       path.join(process.cwd(), 'benchmark/solid-results.json'),
-      JSON.stringify({
-        framework: 'solid-tui',
-        totalTime,
-        updateCount: currentStats.updateCount,
-        avgUpdateTime,
-        minUpdateTime,
-        maxUpdateTime,
-        memory: process.memoryUsage().heapUsed,
-      }, null, 2)
+      JSON.stringify(
+        {
+          framework: 'solid-tui',
+          totalTime,
+          updateCount: currentStats.updateCount,
+          avgUpdateTime,
+          minUpdateTime,
+          maxUpdateTime,
+          memory: process.memoryUsage().heapUsed,
+        },
+        null,
+        2,
+      ),
     );
 
     process.exit(0);
