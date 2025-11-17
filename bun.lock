@@ -28,6 +28,7 @@
       "devDependencies": {
         "@types/node": "^20.0.0",
         "@vitest/coverage-v8": "^1.6.1",
+        "tsx": "^4.7.0",
         "typescript": "^5.3.0",
         "vite-plugin-solid": "^2.11.10",
         "vitest": "^1.0.0",
@@ -47,6 +48,24 @@
       },
       "devDependencies": {
         "@changesets/cli": "^2.29.7",
+        "@types/node": "^20.0.0",
+        "@vitest/coverage-v8": "^1.6.1",
+        "tsx": "^4.7.0",
+        "typescript": "^5.3.0",
+        "vite-plugin-solid": "^2.11.10",
+        "vitest": "^1.0.0",
+      },
+    },
+    "packages/solid-tui-components": {
+      "name": "@sylphx/solid-tui-components",
+      "version": "0.0.0",
+      "dependencies": {
+        "@sylphx/solid-tui": "workspace:*",
+        "chalk": "^5.3.0",
+        "solid-js": "^1.8.0",
+        "string-width": "^7.0.0",
+      },
+      "devDependencies": {
         "@types/node": "^20.0.0",
         "@vitest/coverage-v8": "^1.6.1",
         "tsx": "^4.7.0",
@@ -276,6 +295,8 @@
     "@sinclair/typebox": ["@sinclair/typebox@0.27.8", "", {}, "sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA=="],
 
     "@sylphx/solid-tui": ["@sylphx/solid-tui@workspace:packages/solid-tui"],
+
+    "@sylphx/solid-tui-components": ["@sylphx/solid-tui-components@workspace:packages/solid-tui-components"],
 
     "@sylphx/solid-tui-inputs": ["@sylphx/solid-tui-inputs@workspace:packages/inputs"],
 
