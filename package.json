@@ -1,0 +1,65 @@
+{
+  "name": "solid-ink",
+  "version": "0.1.0",
+  "description": "SolidJS renderer for terminal/CLI applications with fine-grained reactivity",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "example:basic": "tsx examples/basic.tsx",
+    "example:layout": "tsx examples/layout.tsx",
+    "example:interactive": "tsx examples/interactive.tsx",
+    "example:spinner": "tsx examples/spinner.tsx",
+    "example:dashboard": "tsx examples/dashboard.tsx",
+    "example:performance": "tsx examples/performance.tsx",
+    "example:reactivity": "tsx examples/explain-reactivity.tsx",
+    "bench:react": "cd benchmark && npm run bench:react",
+    "bench:solid": "cd benchmark && npm run bench:solid",
+    "bench:both": "cd benchmark && npm run bench:react && npm run bench:solid",
+    "bench:compare": "cd benchmark && npm run bench:compare",
+    "docs:dev": "cd docs && npm run dev",
+    "docs:build": "cd docs && npm run build",
+    "docs:preview": "cd docs && npm run preview"
+  },
+  "keywords": [
+    "solidjs",
+    "terminal",
+    "cli",
+    "ink",
+    "tui",
+    "reactive",
+    "fine-grained"
+  ],
+  "dependencies": {
+    "solid-js": "^1.8.0",
+    "yoga-layout": "^3.0.0",
+    "slice-ansi": "^7.1.0",
+    "string-width": "^7.0.0",
+    "ansi-escapes": "^6.2.0",
+    "cli-cursor": "^4.0.0",
+    "chalk": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0",
+    "tsx": "^4.7.0",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}

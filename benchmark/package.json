@@ -1,0 +1,22 @@
+{
+  "name": "solid-ink-benchmark",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "bench:react": "tsx simple-react-bench.ts",
+    "bench:solid": "tsx simple-bench.ts",
+    "bench:both": "npm run bench:react && npm run bench:solid",
+    "bench:compare": "tsx compare.ts"
+  },
+  "dependencies": {
+    "ink": "^4.4.1",
+    "react": "^18.2.0",
+    "solid-ink": "file:..",
+    "solid-js": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "tsx": "^4.7.0"
+  }
+}

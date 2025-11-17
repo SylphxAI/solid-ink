@@ -1,0 +1,9 @@
+{
+  "framework": "react-ink-simulation",
+  "totalTime": 10000,
+  "updateCount": 99,
+  "avgUpdateTime": 0.021660262626239855,
+  "minUpdateTime": 0.005707999999685853,
+  "maxUpdateTime": 0.11933399999998073,
+  "memory": 7484944
+}
