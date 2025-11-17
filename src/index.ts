@@ -1,6 +1,6 @@
-export { render } from './render.js';
-export { render as renderTest } from './testing.js';
-export type { RenderResult } from './testing.js';
+export { render } from './render.jsx';
+export { render as renderTest } from './testing.jsx';
+export type { RenderResult } from './testing.jsx';
 export { Box } from './components/Box.js';
 export { Text } from './components/Text.js';
 export { Spinner } from './components/Spinner.js';
@@ -20,7 +20,7 @@ export type { TextProps } from './components/Text.js';
 export type { SpinnerProps } from './components/Spinner.js';
 export type { StaticProps } from './components/Static.js';
 export type { TransformProps } from './components/Transform.js';
-export type { RenderOptions } from './render.js';
+export type { RenderOptions } from './render.jsx';
 export type { InputHandler, Key } from './hooks/useInput.js';
 export type { StdoutDimensions } from './hooks/useStdout.js';
 export type { AppContext } from './hooks/useApp.js';
