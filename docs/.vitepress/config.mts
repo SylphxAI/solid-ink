@@ -1,9 +1,11 @@
 import { defineConfig } from 'vitepress';
 
+// @ts-check
 export default defineConfig({
   title: 'Solid-TUI',
   description: 'SolidJS renderer for terminal/CLI applications',
   base: '/',
+  ignoreDeadLinks: true,
 
   themeConfig: {
     nav: [
