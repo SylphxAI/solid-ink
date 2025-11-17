@@ -1,5 +1,12 @@
 # @sylphx/solid-tui-markdown
 
+## 0.1.5
+
+### Patch Changes
+
+- Updated dependencies [29e778d]
+  - @sylphx/solid-tui@1.0.2
+
 ## 0.1.4
 
 ### Patch Changes
