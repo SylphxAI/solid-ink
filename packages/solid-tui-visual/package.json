@@ -1,6 +1,6 @@
 {
   "name": "@sylphx/solid-tui-visual",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Visual effects components for solid-tui: Gradient, BigText, Chart, and more",
   "type": "module",
   "main": "./dist/index.js",

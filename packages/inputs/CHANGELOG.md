@@ -1,5 +1,11 @@
 # @sylphx/solid-tui-inputs
 
+## 0.1.1
+
+### Patch Changes
+
+- 8cd80a6: fix: resolve workspace protocol in published packages
+
 ## 0.1.0
 
 ### Minor Changes
