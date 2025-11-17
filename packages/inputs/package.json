@@ -45,7 +45,7 @@
     "prompt"
   ],
   "dependencies": {
-    "@sylphx/solid-tui": "^1.0.1",
+    "@sylphx/solid-tui": "workspace:*",
     "chalk": "^5.3.0",
     "solid-js": "^1.8.0",
     "string-width": "^7.0.0"

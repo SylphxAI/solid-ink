@@ -44,7 +44,7 @@
     "effects"
   ],
   "dependencies": {
-    "@sylphx/solid-tui": "^1.0.1",
+    "@sylphx/solid-tui": "workspace:*",
     "chalk": "^5.3.0",
     "gradient-string": "^2.0.2",
     "figlet": "^1.7.0",
