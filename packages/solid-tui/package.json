@@ -15,27 +15,24 @@
   },
   "exports": {
     ".": {
-      "bun": {
-        "import": "./dist/index.js",
-        "types": "./dist/index.d.ts"
-      },
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
     "./testing": {
-      "bun": {
-        "import": "./dist/testing.jsx",
-        "types": "./dist/testing.d.ts"
-      },
       "import": "./dist/testing.jsx",
       "types": "./dist/testing.d.ts"
+    },
+    "./reconciler": {
+      "import": "./dist/reconciler.js",
+      "types": "./dist/reconciler.d.ts"
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "dist-bun"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cd ../.. && bun run build-solid-tui.ts",
     "dev": "tsc --watch",
     "test": "vitest",
     "test:run": "vitest run",

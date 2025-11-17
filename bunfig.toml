@@ -1,3 +1,6 @@
 # Configure export conditions priority
-# Put "browser" before "node" for solid-js compatibility
+# Use browser condition only (not development) to avoid server.js
 conditions = ["browser", "import", "module", "default"]
+
+# Preload SolidJS plugin for JSX transformation
+preload = ["./preload-solid.ts"]

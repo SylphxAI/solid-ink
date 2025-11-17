@@ -23,10 +23,14 @@
     "release": "bun run prepare-publish && changeset publish"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-typescript": "^7.28.5",
     "@biomejs/biome": "latest",
     "@changesets/cli": "^2.29.7",
     "@types/node": "^20.19.25",
     "@vitest/coverage-v8": "^1.6.1",
+    "babel-preset-solid": "^1.9.10",
+    "bun-plugin-solid": "^1.0.0",
     "tsx": "^4.20.6",
     "turbo": "^2.6.1",
     "typescript": "^5.9.3",
@@ -39,6 +43,8 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@opentui/solid": "0.1.7",
+    "@sylphx/solid-tui": "workspace:*",
     "solid-js": "^1.9.10"
   }
 }

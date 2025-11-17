@@ -1,7 +1,7 @@
 import cliCursor from 'cli-cursor';
 import { createEffect, createSignal, type JSX } from 'solid-js';
 import { type AppContext } from './hooks/useApp.jsx';
-import { createSolidInkRenderer } from './reconciler.js';
+import { createSolidInkRenderer, setGlobalRenderer } from './reconciler.js';
 import { Renderer } from './renderer.js';
 
 export interface RenderOptions {
@@ -17,6 +17,10 @@ export function render(component: () => JSX.Element, options: RenderOptions = {}
 
   // Create renderer
   const renderer = new Renderer(output);
+
+  // Set global renderer for JSX runtime (Bun compatibility)
+  setGlobalRenderer(renderer);
+
   const solidRenderer = createSolidInkRenderer(renderer);
 
   // Cleanup function
