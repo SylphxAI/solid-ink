@@ -1,4 +1,6 @@
 export { render } from './render.js';
+export { render as renderTest } from './testing.js';
+export type { RenderResult } from './testing.js';
 export { Box } from './components/Box.js';
 export { Text } from './components/Text.js';
 export { Spinner } from './components/Spinner.js';

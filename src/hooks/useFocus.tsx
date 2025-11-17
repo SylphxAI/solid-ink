@@ -1,4 +1,5 @@
 import { createContext, useContext, createSignal, onMount, onCleanup, Accessor } from 'solid-js';
+import { useInput } from './useInput.js';
 
 export interface FocusManager {
   register: (id: symbol) => void;
@@ -11,7 +12,8 @@ export interface FocusManager {
 
 const FocusContext = createContext<FocusManager>();
 
-export function FocusProvider(props: { children: any }) {
+export function FocusProvider(props: { children: any; autoFocus?: boolean }) {
+  const { autoFocus = true } = props;
   const [focusedId, setFocusedId] = createSignal<symbol | null>(null);
   const focusableIds: symbol[] = [];
 
@@ -52,6 +54,19 @@ export function FocusProvider(props: { children: any }) {
     },
     focusedId,
   };
+
+  // Handle Tab/Shift+Tab navigation
+  if (autoFocus) {
+    useInput((_input, key) => {
+      if (key.tab) {
+        if (key.shift) {
+          manager.focusPrevious();
+        } else {
+          manager.focusNext();
+        }
+      }
+    });
+  }
 
   return <FocusContext.Provider value={manager}>{props.children}</FocusContext.Provider>;
 }

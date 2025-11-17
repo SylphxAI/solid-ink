@@ -5,4 +5,8 @@ export default defineConfig({
     globals: true,
     environment: 'node',
   },
+  esbuild: {
+    jsx: 'automatic',
+    jsxImportSource: 'solid-js',
+  },
 });

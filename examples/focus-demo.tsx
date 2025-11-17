@@ -50,8 +50,4 @@ function App() {
   );
 }
 
-render(() => (
-  <FocusProvider>
-    <App />
-  </FocusProvider>
-));
+render(() => <App />);

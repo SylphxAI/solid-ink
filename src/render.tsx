@@ -2,6 +2,7 @@ import { JSX, createEffect } from 'solid-js';
 import { Renderer } from './renderer.js';
 import { createSolidInkRenderer } from './reconciler.js';
 import { AppProvider, AppContext } from './hooks/useApp.js';
+import { FocusProvider } from './hooks/useFocus.js';
 import cliCursor from 'cli-cursor';
 
 export interface RenderOptions {
@@ -57,9 +58,13 @@ export function render(
     stderr: process.stderr,
   };
 
-  // Mount component wrapped with AppProvider
+  // Mount component wrapped with providers
   solidRenderer.render(
-    () => <AppProvider value={appContext}>{component()}</AppProvider>,
+    () => (
+      <AppProvider value={appContext}>
+        <FocusProvider>{component()}</FocusProvider>
+      </AppProvider>
+    ),
     renderer.getRoot()
   );
 
