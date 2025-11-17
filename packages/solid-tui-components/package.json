@@ -1,6 +1,6 @@
 {
   "name": "@sylphx/solid-tui-components",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "UI components for solid-tui: ProgressBar, Table, Divider, Link, TitledBox, and more",
   "type": "module",
   "main": "./dist/index.js",
