@@ -1,4 +1,4 @@
-import { createContext, useContext, createSignal, onCleanup, Accessor } from 'solid-js';
+import { type Accessor, createContext, createSignal, onCleanup, useContext } from 'solid-js';
 import { useInput } from './useInput.js';
 
 export interface FocusManager {

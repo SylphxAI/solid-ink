@@ -1,4 +1,4 @@
-import { Text, Box } from '@sylphx/solid-tui';
+import { Box, Text } from '@sylphx/solid-tui';
 import figlet from 'figlet';
 import { createMemo, For } from 'solid-js';
 
@@ -10,12 +10,7 @@ export interface BigTextProps {
 }
 
 export function BigText(props: BigTextProps) {
-  const {
-    children,
-    font = 'Standard',
-    align = 'left',
-    color,
-  } = props;
+  const { children, font = 'Standard', align = 'left', color } = props;
 
   const rendered = createMemo(() => {
     try {
@@ -24,7 +19,7 @@ export function BigText(props: BigTextProps) {
         horizontalLayout: 'default',
         verticalLayout: 'default',
       });
-    } catch (e) {
+    } catch (_e) {
       // If font is not supported, use default
       return figlet.textSync(children, {
         font: 'Standard',
@@ -61,9 +56,7 @@ export function BigText(props: BigTextProps) {
 
   return (
     <Box flexDirection="column">
-      <For each={lines()}>
-        {(line) => <Text color={color}>{alignLine(line)}</Text>}
-      </For>
+      <For each={lines()}>{(line) => <Text color={color}>{alignLine(line)}</Text>}</For>
     </Box>
   );
 }

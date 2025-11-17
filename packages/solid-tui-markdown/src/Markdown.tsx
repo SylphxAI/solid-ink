@@ -1,6 +1,6 @@
 import { Box, Text } from '@sylphx/solid-tui';
-import { For, createMemo } from 'solid-js';
 import { marked } from 'marked';
+import { createMemo, For } from 'solid-js';
 import { SyntaxHighlight } from './SyntaxHighlight.jsx';
 
 export interface MarkdownProps {
@@ -89,9 +89,7 @@ export function Markdown(props: MarkdownProps) {
             {/* Header */}
             <Box>
               <For each={token.header}>
-                {(cell: any) => (
-                  <Text bold>{cell.text.padEnd(20, ' ')}</Text>
-                )}
+                {(cell: any) => <Text bold>{cell.text.padEnd(20, ' ')}</Text>}
               </For>
             </Box>
             {/* Separator */}
@@ -100,11 +98,7 @@ export function Markdown(props: MarkdownProps) {
             <For each={token.rows}>
               {(row: any) => (
                 <Box>
-                  <For each={row}>
-                    {(cell: any) => (
-                      <Text>{cell.text.padEnd(20, ' ')}</Text>
-                    )}
-                  </For>
+                  <For each={row}>{(cell: any) => <Text>{cell.text.padEnd(20, ' ')}</Text>}</For>
                 </Box>
               )}
             </For>
@@ -121,9 +115,7 @@ export function Markdown(props: MarkdownProps) {
 
   return (
     <Box flexDirection="column">
-      <For each={tokens()}>
-        {(token, index) => renderToken(token, index())}
-      </For>
+      <For each={tokens()}>{(token, index) => renderToken(token, index())}</For>
     </Box>
   );
 }

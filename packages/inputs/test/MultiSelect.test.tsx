@@ -1,5 +1,5 @@
-import { describe, it, expect, vi } from 'vitest';
 import { render } from '@sylphx/solid-tui/testing';
+import { describe, expect, it, vi } from 'vitest';
 import { MultiSelect } from '../src/MultiSelect.jsx';
 
 describe('MultiSelect', () => {
@@ -24,9 +24,7 @@ describe('MultiSelect', () => {
   });
 
   it('respects defaultValue prop', () => {
-    const { lastFrame } = render(() =>
-      MultiSelect({ items, defaultValue: ['first', 'third'] }),
-    );
+    const { lastFrame } = render(() => MultiSelect({ items, defaultValue: ['first', 'third'] }));
     const frame = lastFrame();
     expect(frame).toBeDefined();
   });

@@ -9,8 +9,8 @@ import { join } from 'path';
 
 const packagesDir = join(import.meta.dir, '../packages');
 const packageDirs = readdirSync(packagesDir, { withFileTypes: true })
-  .filter(dirent => dirent.isDirectory())
-  .map(dirent => dirent.name);
+  .filter((dirent) => dirent.isDirectory())
+  .map((dirent) => dirent.name);
 
 // Build version map: package name -> version
 const versionMap = new Map<string, string>();

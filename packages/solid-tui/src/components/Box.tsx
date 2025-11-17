@@ -1,4 +1,4 @@
-import { JSX, splitProps, mergeProps } from 'solid-js';
+import { type JSX, mergeProps, splitProps } from 'solid-js';
 
 export interface BoxProps {
   children?: JSX.Element;

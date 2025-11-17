@@ -1,6 +1,6 @@
 import { Box, Text } from '@sylphx/solid-tui';
-import { createMemo, For } from 'solid-js';
 import hljs from 'highlight.js';
+import { createMemo, For } from 'solid-js';
 
 export interface SyntaxHighlightProps {
   code: string;
@@ -36,12 +36,7 @@ const THEME_COLORS = {
 };
 
 export function SyntaxHighlight(props: SyntaxHighlightProps) {
-  const {
-    code,
-    language = 'javascript',
-    theme = 'dark',
-    showLineNumbers = true,
-  } = props;
+  const { code, language = 'javascript', theme = 'dark', showLineNumbers = true } = props;
 
   const colors = THEME_COLORS[theme];
 
@@ -51,7 +46,7 @@ export function SyntaxHighlight(props: SyntaxHighlightProps) {
         return hljs.highlightAuto(code);
       }
       return hljs.highlight(code, { language });
-    } catch (e) {
+    } catch (_e) {
       // If language is not supported, return plain text
       return { value: code, language: 'plaintext' };
     }

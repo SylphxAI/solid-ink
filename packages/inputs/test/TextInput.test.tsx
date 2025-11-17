@@ -1,6 +1,6 @@
-import { describe, it, expect, vi } from 'vitest';
-import { createSignal } from 'solid-js';
 import { render } from '@sylphx/solid-tui/testing';
+import { createSignal } from 'solid-js';
+import { describe, expect, it, vi } from 'vitest';
 import { TextInput } from '../src/TextInput.jsx';
 
 describe('TextInput', () => {

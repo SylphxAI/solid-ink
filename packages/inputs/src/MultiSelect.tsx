@@ -14,7 +14,11 @@ export interface MultiSelectProps<V = any> {
   defaultValue?: V[];
   limit?: number;
   checkboxComponent?: (props: { isSelected: boolean }) => JSX.Element;
-  itemComponent?: (props: { isSelected: boolean; isChecked: boolean; label: string }) => JSX.Element;
+  itemComponent?: (props: {
+    isSelected: boolean;
+    isChecked: boolean;
+    label: string;
+  }) => JSX.Element;
   onSelect?: (items: MultiSelectItem<V>[]) => void;
   onHighlight?: (item: MultiSelectItem<V>) => void;
   onChange?: (items: MultiSelectItem<V>[]) => void;
@@ -52,9 +56,7 @@ export function MultiSelect<V = any>(props: MultiSelectProps<V>) {
   );
 
   // Track which items are checked (by value)
-  const [checkedValues, setCheckedValues] = createSignal<Set<V>>(
-    new Set(defaultValue),
-  );
+  const [checkedValues, setCheckedValues] = createSignal<Set<V>>(new Set(defaultValue));
 
   const { isFocused } = useFocus({ isActive: isFocusedProp });
 

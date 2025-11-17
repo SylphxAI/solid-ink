@@ -1,4 +1,4 @@
-import { JSX, For } from 'solid-js';
+import { For, type JSX } from 'solid-js';
 
 export interface StaticProps<T> {
   items: readonly T[];

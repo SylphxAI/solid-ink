@@ -1,6 +1,5 @@
-import { render } from '@sylphx/solid-tui';
+import { Box, render, Text } from '@sylphx/solid-tui';
 import { SyntaxHighlight } from '../src/SyntaxHighlight.jsx';
-import { Box, Text } from '@sylphx/solid-tui';
 
 function SyntaxHighlightDemo() {
   const jsCode = `function fibonacci(n) {
@@ -40,11 +39,7 @@ const user: User = {
         <Text bold>Without Line Numbers:</Text>
       </Box>
       <Box marginTop={1}>
-        <SyntaxHighlight
-          code={jsCode}
-          language="javascript"
-          showLineNumbers={false}
-        />
+        <SyntaxHighlight code={jsCode} language="javascript" showLineNumbers={false} />
       </Box>
     </Box>
   );

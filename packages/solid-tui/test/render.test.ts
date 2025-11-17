@@ -1,8 +1,6 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { createSignal } from 'solid-js';
+import { describe, expect, it, vi } from 'vitest';
 import { render } from '../src/testing.js';
-import { Text } from '../src/components/Text.js';
-import { Box } from '../src/components/Box.js';
 
 describe('Render', () => {
   describe('testing render function', () => {

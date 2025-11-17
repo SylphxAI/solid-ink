@@ -1,5 +1,5 @@
-import { describe, it, expect, vi } from 'vitest';
 import { render } from '@sylphx/solid-tui/testing';
+import { describe, expect, it, vi } from 'vitest';
 import { QuickSearchInput } from '../src/QuickSearchInput.jsx';
 
 describe('QuickSearchInput', () => {
@@ -11,9 +11,7 @@ describe('QuickSearchInput', () => {
   ];
 
   it('renders with placeholder when query is empty', () => {
-    const { lastFrame } = render(() =>
-      QuickSearchInput({ items, placeholder: 'Search...' }),
-    );
+    const { lastFrame } = render(() => QuickSearchInput({ items, placeholder: 'Search...' }));
     const frame = lastFrame();
     expect(frame).toContain('Search...');
   });
@@ -90,9 +88,7 @@ describe('QuickSearchInput', () => {
   });
 
   it('respects caseSensitive prop', () => {
-    const { stdin, lastFrame } = render(() =>
-      QuickSearchInput({ items, caseSensitive: true }),
-    );
+    const { stdin, lastFrame } = render(() => QuickSearchInput({ items, caseSensitive: true }));
 
     stdin.write('REACT');
     const frame = lastFrame();

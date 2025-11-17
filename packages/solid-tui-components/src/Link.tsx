@@ -1,5 +1,5 @@
 import { Text } from '@sylphx/solid-tui';
-import { type JSX } from 'solid-js';
+import type { JSX } from 'solid-js';
 
 export interface LinkProps {
   url: string;
@@ -12,11 +12,13 @@ export function Link(props: LinkProps) {
 
   // Check if terminal supports hyperlinks
   const supportsHyperlinks = () => {
-    return process.env.TERM_PROGRAM === 'iTerm.app' ||
-           process.env.TERM_PROGRAM === 'WezTerm' ||
-           process.env.TERM_PROGRAM === 'vscode' ||
-           process.env.WT_SESSION ||
-           process.env.KONSOLE_VERSION;
+    return (
+      process.env.TERM_PROGRAM === 'iTerm.app' ||
+      process.env.TERM_PROGRAM === 'WezTerm' ||
+      process.env.TERM_PROGRAM === 'vscode' ||
+      process.env.WT_SESSION ||
+      process.env.KONSOLE_VERSION
+    );
   };
 
   const renderLink = () => {
@@ -29,7 +31,9 @@ export function Link(props: LinkProps) {
 
       return (
         <Text color="blue" underline>
-          {openLink}{label}{closeLink}
+          {openLink}
+          {label}
+          {closeLink}
         </Text>
       );
     }
@@ -42,7 +46,11 @@ export function Link(props: LinkProps) {
       );
     }
 
-    return <Text color="blue" underline>{label}</Text>;
+    return (
+      <Text color="blue" underline>
+        {label}
+      </Text>
+    );
   };
 
   return renderLink();

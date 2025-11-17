@@ -1,6 +1,5 @@
-import { render } from '@sylphx/solid-tui';
+import { Box, render, Text } from '@sylphx/solid-tui';
 import { Link } from '../src/Link.jsx';
-import { Box, Text } from '@sylphx/solid-tui';
 
 function LinkDemo() {
   return (
@@ -19,7 +18,9 @@ function LinkDemo() {
 
       <Box marginTop={1}>
         <Text>Without fallback: </Text>
-        <Link url="https://example.com" fallback={false}>Click here</Link>
+        <Link url="https://example.com" fallback={false}>
+          Click here
+        </Link>
       </Box>
     </Box>
   );

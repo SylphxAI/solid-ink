@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeEach } from 'vitest';
-import { Renderer, DOMNode } from '../src/renderer.js';
+import { beforeEach, describe, expect, it } from 'vitest';
+import { Renderer } from '../src/renderer.js';
 
 describe('Renderer Extended', () => {
   let renderer: Renderer;

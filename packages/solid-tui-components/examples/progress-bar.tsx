@@ -1,7 +1,6 @@
-import { render } from '@sylphx/solid-tui';
-import { createSignal, onMount, onCleanup } from 'solid-js';
+import { Box, render, Text } from '@sylphx/solid-tui';
+import { createSignal, onCleanup, onMount } from 'solid-js';
 import { ProgressBar } from '../src/ProgressBar.jsx';
-import { Box, Text } from '@sylphx/solid-tui';
 
 function ProgressBarDemo() {
   const [progress, setProgress] = createSignal(0);

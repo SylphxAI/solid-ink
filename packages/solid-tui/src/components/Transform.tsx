@@ -1,4 +1,4 @@
-import { JSX, children as resolveChildren } from 'solid-js';
+import { type JSX, children as resolveChildren } from 'solid-js';
 
 export interface TransformProps {
   transform: (children: string) => string;

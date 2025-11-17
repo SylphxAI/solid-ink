@@ -1,5 +1,5 @@
 import { Box, Text } from '@sylphx/solid-tui';
-import { For, createMemo } from 'solid-js';
+import { createMemo, For } from 'solid-js';
 import stringWidth from 'string-width';
 
 export interface TableColumn<T = any> {
@@ -116,12 +116,7 @@ export function Table<T = any>(props: TableProps<T>) {
     return value + ' '.repeat(padding);
   };
 
-  const renderBorder = (
-    left: string,
-    join: string,
-    right: string,
-    horizontal: string,
-  ) => {
+  const renderBorder = (left: string, join: string, right: string, horizontal: string) => {
     if (borderStyle === 'none') return null;
 
     const widths = columnWidths();
@@ -129,7 +124,9 @@ export function Table<T = any>(props: TableProps<T>) {
 
     return (
       <Text color={borderColor}>
-        {left}{segments.join(join)}{right}
+        {left}
+        {segments.join(join)}
+        {right}
       </Text>
     );
   };
@@ -144,7 +141,8 @@ export function Table<T = any>(props: TableProps<T>) {
           {(col, i) => (
             <>
               <Text color={headerColor} bold>
-                {' '}{padCell(col.title, widths[i()], col.align)}{' '}
+                {' '}
+                {padCell(col.title, widths[i()], col.align)}{' '}
               </Text>
               {i() < columns.length - 1 && borderStyle !== 'none' && (
                 <Text color={borderColor}>{border.vertical}</Text>
@@ -173,9 +171,7 @@ export function Table<T = any>(props: TableProps<T>) {
 
             return (
               <>
-                <Text color={isStriped ? stripeColor : undefined}>
-                  {' '}{paddedValue}{' '}
-                </Text>
+                <Text color={isStriped ? stripeColor : undefined}> {paddedValue} </Text>
                 {i() < columns.length - 1 && borderStyle !== 'none' && (
                   <Text color={borderColor}>{border.vertical}</Text>
                 )}
@@ -193,9 +189,7 @@ export function Table<T = any>(props: TableProps<T>) {
       {renderBorder(border.topLeft, border.topJoin, border.topRight, border.horizontal)}
       {renderHeader()}
       {renderBorder(border.middleLeft, border.middleJoin, border.middleRight, border.horizontal)}
-      <For each={data}>
-        {(row, i) => renderRow(row, i())}
-      </For>
+      <For each={data}>{(row, i) => renderRow(row, i())}</For>
       {renderBorder(border.bottomLeft, border.bottomJoin, border.bottomRight, border.horizontal)}
     </Box>
   );

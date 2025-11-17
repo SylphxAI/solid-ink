@@ -1,5 +1,5 @@
 import { createRenderer } from 'solid-js/universal';
-import { Renderer, DOMNode } from './renderer.js';
+import type { DOMNode, Renderer } from './renderer.js';
 
 export function createSolidInkRenderer(renderer: Renderer) {
   return createRenderer<DOMNode>({

@@ -1,6 +1,5 @@
-import { render } from '@sylphx/solid-tui';
+import { Box, render, Text } from '@sylphx/solid-tui';
 import { TitledBox } from '../src/TitledBox.jsx';
-import { Box, Text } from '@sylphx/solid-tui';
 
 function TitledBoxDemo() {
   return (

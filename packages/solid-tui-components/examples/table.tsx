@@ -1,6 +1,5 @@
-import { render } from '@sylphx/solid-tui';
+import { Box, render, Text } from '@sylphx/solid-tui';
 import { Table } from '../src/Table.jsx';
-import { Box, Text } from '@sylphx/solid-tui';
 
 function TableDemo() {
   const columns = [

@@ -4,7 +4,7 @@ export type { LinkProps } from './Link.jsx';
 export { Link } from './Link.jsx';
 export type { ProgressBarProps } from './ProgressBar.jsx';
 export { ProgressBar } from './ProgressBar.jsx';
-export type { TableProps, TableColumn } from './Table.jsx';
+export type { TableColumn, TableProps } from './Table.jsx';
 export { Table } from './Table.jsx';
 export type { TitledBoxProps } from './TitledBox.jsx';
 export { TitledBox } from './TitledBox.jsx';

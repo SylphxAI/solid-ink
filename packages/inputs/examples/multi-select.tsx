@@ -1,7 +1,6 @@
-import { render } from '@sylphx/solid-tui';
+import { Box, render, Text } from '@sylphx/solid-tui';
 import { createSignal } from 'solid-js';
 import { MultiSelect } from '../src/MultiSelect.jsx';
-import { Box, Text } from '@sylphx/solid-tui';
 
 function MultiSelectDemo() {
   const [selected, setSelected] = createSignal<string[]>([]);
@@ -28,9 +27,7 @@ function MultiSelectDemo() {
       </Box>
       {selected().length > 0 && (
         <Box marginTop={1}>
-          <Text color="green">
-            Selected: {selected().join(', ')}
-          </Text>
+          <Text color="green">Selected: {selected().join(', ')}</Text>
         </Box>
       )}
     </Box>

@@ -1,6 +1,5 @@
-import { render } from '@sylphx/solid-tui';
+import { Box, render, Text } from '@sylphx/solid-tui';
 import { BigText } from '../src/BigText.jsx';
-import { Box, Text } from '@sylphx/solid-tui';
 
 function BigTextDemo() {
   return (
@@ -13,17 +12,23 @@ function BigTextDemo() {
 
       <Box marginTop={2}>
         <Text>Font: Banner</Text>
-        <BigText font="Banner" color="green">CLI</BigText>
+        <BigText font="Banner" color="green">
+          CLI
+        </BigText>
       </Box>
 
       <Box marginTop={2}>
         <Text>Font: Slant</Text>
-        <BigText font="Slant" color="magenta">COOL</BigText>
+        <BigText font="Slant" color="magenta">
+          COOL
+        </BigText>
       </Box>
 
       <Box marginTop={2}>
         <Text>Centered Alignment</Text>
-        <BigText align="center" color="yellow">SOLID</BigText>
+        <BigText align="center" color="yellow">
+          SOLID
+        </BigText>
       </Box>
     </Box>
   );

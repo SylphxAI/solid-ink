@@ -1,5 +1,5 @@
-import { describe, it, expect, vi } from 'vitest';
 import { render } from '@sylphx/solid-tui/testing';
+import { describe, expect, it, vi } from 'vitest';
 import { SelectInput } from '../src/SelectInput.jsx';
 
 describe('SelectInput', () => {
@@ -135,7 +135,9 @@ describe('SelectInput', () => {
 
   it('respects isFocused prop', () => {
     const onSelect = vi.fn();
-    const { stdin } = render(() => <SelectInput items={items} isFocused={false} onSelect={onSelect} />);
+    const { stdin } = render(() => (
+      <SelectInput items={items} isFocused={false} onSelect={onSelect} />
+    ));
 
     stdin.write('\r');
     expect(onSelect).not.toHaveBeenCalled();

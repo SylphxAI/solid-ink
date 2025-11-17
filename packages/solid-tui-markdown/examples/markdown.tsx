@@ -1,6 +1,5 @@
-import { render } from '@sylphx/solid-tui';
+import { Box, render } from '@sylphx/solid-tui';
 import { Markdown } from '../src/Markdown.jsx';
-import { Box } from '@sylphx/solid-tui';
 
 function MarkdownDemo() {
   const markdown = `# Markdown Demo

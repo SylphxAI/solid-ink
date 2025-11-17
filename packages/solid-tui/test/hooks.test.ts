@@ -1,11 +1,10 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { createRoot, createSignal } from 'solid-js';
-import { useApp, AppProvider } from '../src/hooks/useApp.js';
+import { describe, expect, it } from 'vitest';
+import { useApp } from '../src/hooks/useApp.js';
+import { useFocus, useFocusManager } from '../src/hooks/useFocus.js';
+import { useInput } from '../src/hooks/useInput.js';
+import { useStderr } from '../src/hooks/useStderr.js';
 import { useStdin } from '../src/hooks/useStdin.js';
 import { useStdout } from '../src/hooks/useStdout.js';
-import { useStderr } from '../src/hooks/useStderr.js';
-import { useInput } from '../src/hooks/useInput.js';
-import { useFocus, useFocusManager, FocusProvider } from '../src/hooks/useFocus.js';
 import { render } from '../src/testing.js';
 
 describe('Hooks', () => {
@@ -226,11 +225,11 @@ describe('Hooks', () => {
     });
 
     it('unregisters on cleanup', () => {
-      let manager: any;
+      let _manager: any;
       let focus: any;
 
       const Test = () => {
-        manager = useFocusManager();
+        _manager = useFocusManager();
         focus = useFocus();
         return '';
       };

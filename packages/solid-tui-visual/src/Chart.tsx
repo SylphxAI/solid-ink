@@ -1,5 +1,5 @@
 import { Box, Text } from '@sylphx/solid-tui';
-import { For, createMemo } from 'solid-js';
+import { createMemo, For } from 'solid-js';
 
 export interface ChartDataPoint {
   label: string;
@@ -51,9 +51,7 @@ export function Chart(props: ChartProps) {
               <Box>
                 <Text>{point.label.padEnd(maxLabelWidth + 2, ' ')}</Text>
                 <Text color={color}>{bar}</Text>
-                {showValues && (
-                  <Text dim> {point.value}</Text>
-                )}
+                {showValues && <Text dim> {point.value}</Text>}
               </Box>
             );
           }}
@@ -98,9 +96,7 @@ export function Chart(props: ChartProps) {
 
     return (
       <Box flexDirection="column">
-        <For each={lines}>
-          {(line) => <Text color={color}>{line}</Text>}
-        </For>
+        <For each={lines}>{(line) => <Text color={color}>{line}</Text>}</For>
         {showAxis && (
           <Box marginTop={1}>
             <For each={data}>

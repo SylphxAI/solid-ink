@@ -1,5 +1,5 @@
 import { Box, Text } from '@sylphx/solid-tui';
-import { type JSX } from 'solid-js';
+import type { JSX } from 'solid-js';
 
 export interface TitledBoxProps {
   title?: string;
@@ -72,7 +72,9 @@ export function TitledBox(props: TitledBoxProps) {
     if (!title) {
       return (
         <Text color={borderColor}>
-          {border.topLeft}{border.horizontal.repeat(innerWidth)}{border.topRight}
+          {border.topLeft}
+          {border.horizontal.repeat(innerWidth)}
+          {border.topRight}
         </Text>
       );
     }
@@ -87,7 +89,9 @@ export function TitledBox(props: TitledBoxProps) {
       <Box>
         <Text color={borderColor}>{border.topLeft}</Text>
         <Text color={borderColor}>{border.horizontal.repeat(leftWidth)}</Text>
-        <Text color={titleColor || borderColor} bold>{titleWithPadding}</Text>
+        <Text color={titleColor || borderColor} bold>
+          {titleWithPadding}
+        </Text>
         <Text color={borderColor}>{border.horizontal.repeat(Math.max(0, rightWidth))}</Text>
         <Text color={borderColor}>{border.topRight}</Text>
       </Box>
@@ -97,7 +101,9 @@ export function TitledBox(props: TitledBoxProps) {
   const renderBottomBorder = () => {
     return (
       <Text color={borderColor}>
-        {border.bottomLeft}{border.horizontal.repeat(innerWidth)}{border.bottomRight}
+        {border.bottomLeft}
+        {border.horizontal.repeat(innerWidth)}
+        {border.bottomRight}
       </Text>
     );
   };

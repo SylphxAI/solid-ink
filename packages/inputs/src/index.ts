@@ -1,10 +1,10 @@
 export type { ConfirmInputProps } from './ConfirmInput.jsx';
 export { ConfirmInput } from './ConfirmInput.jsx';
-export type { MultiSelectProps, MultiSelectItem } from './MultiSelect.jsx';
+export type { MultiSelectItem, MultiSelectProps } from './MultiSelect.jsx';
 export { MultiSelect } from './MultiSelect.jsx';
 export type { QuickSearchInputProps, QuickSearchItem } from './QuickSearchInput.jsx';
 export { QuickSearchInput } from './QuickSearchInput.jsx';
-export type { SelectInputProps, SelectInputItem } from './SelectInput.jsx';
+export type { SelectInputItem, SelectInputProps } from './SelectInput.jsx';
 export { SelectInput } from './SelectInput.jsx';
 export type { TextInputProps } from './TextInput.jsx';
 export { TextInput } from './TextInput.jsx';

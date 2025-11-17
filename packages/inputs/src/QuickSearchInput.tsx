@@ -204,9 +204,7 @@ export function QuickSearchInput<V = any>(props: QuickSearchInputProps<V>) {
             </Box>
           )}
         </For>
-        {filteredItems().length === 0 && query() && (
-          <Text dim>No results found</Text>
-        )}
+        {filteredItems().length === 0 && query() && <Text dim>No results found</Text>}
       </Box>
     </Box>
   );

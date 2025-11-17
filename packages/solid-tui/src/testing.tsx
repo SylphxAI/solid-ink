@@ -1,9 +1,9 @@
-import { JSX } from 'solid-js';
-import { Renderer } from './renderer.js';
-import { createSolidInkRenderer } from './reconciler.js';
-import { AppProvider, AppContext } from './hooks/useApp.js';
+import { Writable } from 'node:stream';
+import type { JSX } from 'solid-js';
+import { type AppContext, AppProvider } from './hooks/useApp.js';
 import { FocusProvider } from './hooks/useFocus.js';
-import { Writable } from 'stream';
+import { createSolidInkRenderer } from './reconciler.js';
+import { Renderer } from './renderer.js';
 
 export interface RenderResult {
   lastFrame: () => string;

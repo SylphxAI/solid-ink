@@ -1,5 +1,5 @@
-import Yoga from 'yoga-layout';
 import ansiEscapes from 'ansi-escapes';
+import Yoga from 'yoga-layout';
 
 type YogaNode = ReturnType<typeof Yoga.Node.create>;
 
@@ -181,7 +181,7 @@ export class Renderer {
       case 'marginBottom':
         yoga.setMargin(this.yoga.EDGE_BOTTOM, value);
         break;
-      case 'flexDirection':
+      case 'flexDirection': {
         const directionMap = {
           row: this.yoga.FLEX_DIRECTION_ROW,
           column: this.yoga.FLEX_DIRECTION_COLUMN,
@@ -190,7 +190,8 @@ export class Renderer {
         };
         yoga.setFlexDirection(directionMap[value as keyof typeof directionMap]);
         break;
-      case 'justifyContent':
+      }
+      case 'justifyContent': {
         const justifyMap = {
           'flex-start': this.yoga.JUSTIFY_FLEX_START,
           center: this.yoga.JUSTIFY_CENTER,
@@ -200,7 +201,8 @@ export class Renderer {
         };
         yoga.setJustifyContent(justifyMap[value as keyof typeof justifyMap]);
         break;
-      case 'alignItems':
+      }
+      case 'alignItems': {
         const alignMap = {
           'flex-start': this.yoga.ALIGN_FLEX_START,
           center: this.yoga.ALIGN_CENTER,
@@ -209,6 +211,7 @@ export class Renderer {
         };
         yoga.setAlignItems(alignMap[value as keyof typeof alignMap]);
         break;
+      }
       case 'flexGrow':
         yoga.setFlexGrow(value);
         break;

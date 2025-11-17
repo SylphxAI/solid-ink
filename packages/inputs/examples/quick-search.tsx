@@ -1,7 +1,6 @@
-import { render } from '@sylphx/solid-tui';
+import { Box, render, Text } from '@sylphx/solid-tui';
 import { createSignal } from 'solid-js';
 import { QuickSearchInput } from '../src/QuickSearchInput.jsx';
-import { Box, Text } from '@sylphx/solid-tui';
 
 function QuickSearchDemo() {
   const [selected, setSelected] = createSignal<string | null>(null);
@@ -32,9 +31,7 @@ function QuickSearchDemo() {
       </Box>
       {selected() && (
         <Box marginTop={1}>
-          <Text color="green">
-            You selected: {selected()}
-          </Text>
+          <Text color="green">You selected: {selected()}</Text>
         </Box>
       )}
     </Box>

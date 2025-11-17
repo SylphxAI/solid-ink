@@ -1,7 +1,6 @@
-import { render } from '@sylphx/solid-tui';
+import { Box, render, Text } from '@sylphx/solid-tui';
 import { createSignal } from 'solid-js';
 import { TextInput } from '../src/TextInput.jsx';
-import { Box, Text } from '@sylphx/solid-tui';
 
 function TextInputDemo() {
   const [value, setValue] = createSignal('');
@@ -18,11 +17,7 @@ function TextInputDemo() {
           setSubmitted(val);
         }}
       />
-      {submitted() && (
-        <Text color="green">
-          Submitted: {submitted()}
-        </Text>
-      )}
+      {submitted() && <Text color="green">Submitted: {submitted()}</Text>}
     </Box>
   );
 }

@@ -1,6 +1,5 @@
-import { render } from '@sylphx/solid-tui';
+import { Box, render, Text } from '@sylphx/solid-tui';
 import { Divider } from '../src/Divider.jsx';
-import { Box, Text } from '@sylphx/solid-tui';
 
 function DividerDemo() {
   return (

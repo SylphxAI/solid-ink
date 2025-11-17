@@ -1,7 +1,6 @@
-import { render } from '@sylphx/solid-tui';
+import { Box, render, Text } from '@sylphx/solid-tui';
 import { createSignal } from 'solid-js';
 import { ConfirmInput } from '../src/ConfirmInput.jsx';
-import { Box, Text } from '@sylphx/solid-tui';
 
 function ConfirmInputDemo() {
   const [confirmed, setConfirmed] = createSignal<boolean | null>(null);

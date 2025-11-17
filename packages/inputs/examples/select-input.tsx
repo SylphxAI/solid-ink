@@ -1,7 +1,6 @@
-import { render } from '@sylphx/solid-tui';
+import { Box, render, Text } from '@sylphx/solid-tui';
 import { createSignal } from 'solid-js';
 import { SelectInput } from '../src/SelectInput.jsx';
-import { Box, Text } from '@sylphx/solid-tui';
 
 function SelectInputDemo() {
   const [selected, setSelected] = createSignal<string | null>(null);
@@ -22,11 +21,7 @@ function SelectInputDemo() {
           setSelected(item.value);
         }}
       />
-      {selected() && (
-        <Text color="green">
-          You selected: {selected()}
-        </Text>
-      )}
+      {selected() && <Text color="green">You selected: {selected()}</Text>}
     </Box>
   );
 }

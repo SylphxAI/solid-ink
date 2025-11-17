@@ -1,5 +1,5 @@
-import { JSX, children as resolveChildren } from 'solid-js';
 import chalk from 'chalk';
+import { type JSX, children as resolveChildren } from 'solid-js';
 
 export interface TextProps {
   children?: JSX.Element;
@@ -28,7 +28,7 @@ export function Text(props: TextProps) {
       if (props.color.startsWith('#')) {
         fn = fn.hex(props.color);
       } else {
-        // @ts-ignore - dynamic color access
+        // @ts-expect-error - dynamic color access
         fn = fn[props.color] || fn;
       }
     }

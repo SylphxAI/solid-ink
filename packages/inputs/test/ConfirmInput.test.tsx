@@ -1,5 +1,5 @@
-import { describe, it, expect, vi } from 'vitest';
 import { render } from '@sylphx/solid-tui/testing';
+import { describe, expect, it, vi } from 'vitest';
 import { ConfirmInput } from '../src/ConfirmInput.jsx';
 
 describe('ConfirmInput', () => {
@@ -116,9 +116,7 @@ describe('ConfirmInput', () => {
   });
 
   it('passes through TextInput props', () => {
-    const { lastFrame } = render(() => (
-      <ConfirmInput placeholder="Confirm?" showCursor mask="*" />
-    ));
+    const { lastFrame } = render(() => <ConfirmInput placeholder="Confirm?" showCursor mask="*" />);
 
     const frame = lastFrame();
     expect(frame).toContain('Confirm?');

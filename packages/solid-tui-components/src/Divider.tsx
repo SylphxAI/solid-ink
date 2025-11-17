@@ -10,13 +10,7 @@ export interface DividerProps {
 }
 
 export function Divider(props: DividerProps) {
-  const {
-    title,
-    width = 50,
-    character = '─',
-    color = 'dim',
-    titleColor,
-  } = props;
+  const { title, width = 50, character = '─', color = 'dim', titleColor } = props;
 
   const renderDivider = () => {
     if (!title) {
@@ -26,7 +20,7 @@ export function Divider(props: DividerProps) {
     const titleWithPadding = ` ${title} `;
     const titleLength = titleWithPadding.length;
     const sideLength = Math.floor((width - titleLength) / 2);
-    const remainder = width - titleLength - (sideLength * 2);
+    const remainder = width - titleLength - sideLength * 2;
 
     const leftSide = character.repeat(sideLength);
     const rightSide = character.repeat(sideLength + remainder);

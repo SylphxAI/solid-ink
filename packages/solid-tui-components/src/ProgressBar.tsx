@@ -51,9 +51,7 @@ export function ProgressBar(props: ProgressBarProps) {
   return (
     <Box>
       {renderBar()}
-      {showPercentage && (
-        <Text> {percentage()}%</Text>
-      )}
+      {showPercentage && <Text> {percentage()}%</Text>}
     </Box>
   );
 }

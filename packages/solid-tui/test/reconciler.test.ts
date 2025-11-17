@@ -1,7 +1,7 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { createSignal } from 'solid-js';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { createSolidInkRenderer } from '../src/reconciler.js';
 import { Renderer } from '../src/renderer.js';
-import { createSignal } from 'solid-js';
 
 describe('Reconciler', () => {
   let renderer: Renderer;
