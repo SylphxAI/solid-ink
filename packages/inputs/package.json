@@ -1,6 +1,6 @@
 {
   "name": "@sylphx/solid-tui-inputs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Input components for solid-tui: TextInput, SelectInput, ConfirmInput, and more",
   "type": "module",
   "main": "./dist/index.js",
@@ -45,7 +45,7 @@
     "prompt"
   ],
   "dependencies": {
-    "@sylphx/solid-tui": "workspace:*",
+    "@sylphx/solid-tui": "^1.0.1",
     "chalk": "^5.3.0",
     "solid-js": "^1.8.0",
     "string-width": "^7.0.0"

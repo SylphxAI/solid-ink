@@ -1,5 +1,11 @@
 # @sylphx/solid-tui-markdown
 
+## 0.1.2
+
+### Patch Changes
+
+- 40a87f6: fix: republish packages with resolved dependencies (not workspace:\*)
+
 ## 0.1.1
 
 ### Patch Changes
