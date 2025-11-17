@@ -16,6 +16,7 @@ export default defineConfig({
     globals: true,
     environment: 'node',
     passWithNoTests: true,
+    include: [],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
