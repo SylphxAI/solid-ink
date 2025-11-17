@@ -20,8 +20,7 @@
     "changeset": "changeset",
     "version": "changeset version",
     "prepare-publish": "bun scripts/prepare-publish.ts",
-    "setup-npm-auth": "echo \"//registry.npmjs.org/:_authToken=${NPM_TOKEN}\" > ~/.npmrc",
-    "release": "bun run build && bun run prepare-publish && bun run setup-npm-auth && changeset publish"
+    "release": "bun run prepare-publish && changeset publish"
   },
   "devDependencies": {
     "@biomejs/biome": "latest",

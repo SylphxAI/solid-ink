@@ -14,24 +14,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: bun install
 
-      - name: Build packages
-        run: bun run build
-
-      - name: Debug - Check NPM_TOKEN
+      - name: Build Packages
         run: |
-          echo "NPM_TOKEN length: ${#NPM_TOKEN}"
-          echo "NPM_TOKEN starts with: ${NPM_TOKEN:0:10}..."
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          for dir in packages/*/; do
+            if [ -f "$dir/package.json" ] && grep -q '"build"' "$dir/package.json"; then
+              echo "Building $dir..."
+              (cd "$dir" && bun run build)
+            fi
+          done
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
