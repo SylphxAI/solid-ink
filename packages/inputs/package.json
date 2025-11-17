@@ -30,7 +30,9 @@
     "test:coverage": "vitest run --coverage",
     "example:text": "tsx examples/text-input.tsx",
     "example:select": "tsx examples/select-input.tsx",
-    "example:confirm": "tsx examples/confirm-input.tsx"
+    "example:confirm": "tsx examples/confirm-input.tsx",
+    "example:multi": "tsx examples/multi-select.tsx",
+    "example:search": "tsx examples/quick-search.tsx"
   },
   "keywords": [
     "solidjs",
