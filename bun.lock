@@ -7,20 +7,20 @@
       "devDependencies": {
         "@biomejs/biome": "latest",
         "@changesets/cli": "^2.29.7",
-        "@types/node": "^20.0.0",
+        "@types/node": "^20.19.25",
         "@vitest/coverage-v8": "^1.6.1",
-        "tsx": "^4.7.0",
-        "turbo": "^2.3.3",
-        "typescript": "^5.3.0",
+        "tsx": "^4.20.6",
+        "turbo": "^2.6.1",
+        "typescript": "^5.9.3",
         "vite-plugin-solid": "^2.11.10",
-        "vitest": "^1.0.0",
+        "vitest": "^1.6.1",
       },
     },
     "packages/inputs": {
       "name": "@sylphx/solid-tui-inputs",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "dependencies": {
-        "@sylphx/solid-tui": "workspace:*",
+        "@sylphx/solid-tui": "^1.0.1",
         "chalk": "^5.3.0",
         "solid-js": "^1.8.0",
         "string-width": "^7.0.0",
@@ -58,9 +58,9 @@
     },
     "packages/solid-tui-components": {
       "name": "@sylphx/solid-tui-components",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "dependencies": {
-        "@sylphx/solid-tui": "workspace:*",
+        "@sylphx/solid-tui": "^1.0.1",
         "chalk": "^5.3.0",
         "solid-js": "^1.8.0",
         "string-width": "^7.0.0",
@@ -76,9 +76,9 @@
     },
     "packages/solid-tui-markdown": {
       "name": "@sylphx/solid-tui-markdown",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "dependencies": {
-        "@sylphx/solid-tui": "workspace:*",
+        "@sylphx/solid-tui": "^1.0.1",
         "chalk": "^5.3.0",
         "highlight.js": "^11.9.0",
         "marked": "^11.0.0",
@@ -95,9 +95,9 @@
     },
     "packages/solid-tui-visual": {
       "name": "@sylphx/solid-tui-visual",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "dependencies": {
-        "@sylphx/solid-tui": "workspace:*",
+        "@sylphx/solid-tui": "^1.0.1",
         "chalk": "^5.3.0",
         "figlet": "^1.7.0",
         "gradient-string": "^2.0.2",
