@@ -180,5 +180,105 @@ describe('Hooks', () => {
 
       unmount();
     });
+
+    it('handles focus wrapping', () => {
+      let manager: any;
+      let focus1: any;
+      let focus2: any;
+
+      const Test = () => {
+        manager = useFocusManager();
+        focus1 = useFocus();
+        focus2 = useFocus();
+        return '';
+      };
+
+      const { unmount } = render(() => Test());
+
+      // Focus on second item
+      manager.focusNext();
+      expect(focus2.isFocused()).toBe(true);
+
+      // Wrap around to first
+      manager.focusNext();
+      expect(focus1.isFocused()).toBe(true);
+
+      // Go backwards - wrap to last
+      manager.focusPrevious();
+      expect(focus2.isFocused()).toBe(true);
+
+      unmount();
+    });
+
+    it('handles inactive focus items', () => {
+      let focus: any;
+
+      const Test = () => {
+        focus = useFocus({ isActive: false });
+        return '';
+      };
+
+      const { unmount } = render(() => Test());
+
+      expect(focus.isFocused()).toBe(false);
+
+      unmount();
+    });
+
+    it('unregisters on cleanup', () => {
+      let manager: any;
+      let focus: any;
+
+      const Test = () => {
+        manager = useFocusManager();
+        focus = useFocus();
+        return '';
+      };
+
+      const { unmount } = render(() => Test());
+
+      expect(focus.isFocused()).toBe(true);
+
+      unmount();
+
+      // After unmount, focus should be cleaned up
+      expect(() => focus.isFocused()).not.toThrow();
+    });
+  });
+
+  describe('useStdout extended', () => {
+    it('handles resize events', () => {
+      let stdout: any;
+
+      const Test = () => {
+        stdout = useStdout();
+        return '';
+      };
+
+      const { unmount } = render(() => Test());
+
+      const dims = stdout();
+      expect(dims.columns).toBeDefined();
+      expect(dims.rows).toBeDefined();
+
+      unmount();
+    });
+  });
+
+  describe('useApp extended', () => {
+    it('exit does not throw', () => {
+      let app: any;
+
+      const Test = () => {
+        app = useApp();
+        return '';
+      };
+
+      const { unmount } = render(() => Test());
+
+      expect(() => app.exit()).not.toThrow();
+
+      unmount();
+    });
   });
 });

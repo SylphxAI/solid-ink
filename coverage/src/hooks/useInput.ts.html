@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.86% </span>
+                <span class="strong">48.83% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>36/86</span>
+                <span class='fraction'>42/86</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.86% </span>
+                <span class="strong">48.83% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>36/86</span>
+                <span class='fraction'>42/86</span>
             </div>
         
             
@@ -185,6 +185,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -220,6 +223,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -229,12 +234,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { onCleanup } from 'solid-js';
 &nbsp;
 export type Key = {
@@ -270,10 +270,10 @@ const ESCAPE_SEQUENCES: Record&lt;string, Partial&lt;Key&gt;&gt; = {
   '\x1b[3~': { delete: true },
 };
 &nbsp;
-export <span class="fstat-no" title="function not covered" >function useInput(handler: InputHandler, options: { isActive?: boolean } = {}) {</span>
-<span class="cstat-no" title="statement not covered" >  const { isActive = true } = options;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  const handleData = (data: Buffer) =&gt; {</span>
+export function useInput(handler: InputHandler, options: { isActive?: boolean } = {}) {
+  const { isActive = true } = options;
+&nbsp;
+  const handleData = <span class="fstat-no" title="function not covered" >(data: Buffer) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    if (!isActive) return;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const input = data.toString();</span>
@@ -309,8 +309,8 @@ export <span class="fstat-no" title="function not covered" >function useInput(ha
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    handler(input, key);</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  if (process.stdin.isTTY) {</span>
+&nbsp;
+  if (process.stdin.isTTY) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    const wasRaw = process.stdin.isRaw;</span>
 <span class="cstat-no" title="statement not covered" >    process.stdin.setRawMode(true);</span>
 <span class="cstat-no" title="statement not covered" >    process.stdin.on('data', handleData);</span>
@@ -320,7 +320,7 @@ export <span class="fstat-no" title="function not covered" >function useInput(ha
 <span class="cstat-no" title="statement not covered" >      process.stdin.setRawMode(wasRaw);</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -328,7 +328,7 @@ export <span class="fstat-no" title="function not covered" >function useInput(ha
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-17T04:08:07.454Z
+                at 2025-11-17T04:15:28.646Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

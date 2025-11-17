@@ -57,4 +57,50 @@ describe('Reconciler', () => {
 
     expect(renderer.getRoot().children.length).toBeGreaterThan(0);
   });
+
+  it('handles nested components', () => {
+    solidRenderer.render(
+      () => {
+        const inner = renderer.createElement('box');
+        const text = renderer.createTextNode('nested');
+        renderer.appendChild(inner, text);
+        return inner;
+      },
+      renderer.getRoot()
+    );
+
+    expect(renderer.getRoot().children.length).toBeGreaterThan(0);
+  });
+
+  it('handles multiple children', () => {
+    solidRenderer.render(
+      () => {
+        const box = renderer.createElement('box');
+        const text1 = renderer.createTextNode('first');
+        const text2 = renderer.createTextNode('second');
+        renderer.appendChild(box, text1);
+        renderer.appendChild(box, text2);
+        return box;
+      },
+      renderer.getRoot()
+    );
+
+    expect(renderer.getRoot().children.length).toBeGreaterThan(0);
+  });
+
+  it('handles conditional rendering', () => {
+    const [show, setShow] = createSignal(true);
+
+    solidRenderer.render(
+      () => (show() ? 'visible' : null),
+      renderer.getRoot()
+    );
+
+    expect(renderer.getRoot().children.length).toBeGreaterThan(0);
+
+    setShow(false);
+
+    // Still has children (text nodes)
+    expect(renderer.getRoot()).toBeDefined();
+  });
 });

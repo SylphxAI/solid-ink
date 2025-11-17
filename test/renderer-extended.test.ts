@@ -289,5 +289,53 @@ describe('Renderer Extended', () => {
 
       expect(text.textContent).toBe('frame2');
     });
+
+    it('handles text nodes with color function', () => {
+      const root = renderer.getRoot();
+      const box = renderer.createElement('box');
+      const text = renderer.createElement('text');
+
+      renderer.setTextContent(text, 'colored');
+      renderer.setProperty(text, 'color', (str: string) => `\x1b[31m${str}\x1b[0m`);
+
+      renderer.appendChild(root, box);
+      renderer.appendChild(box, text);
+
+      expect(() => renderer.render()).not.toThrow();
+    });
+
+    it('handles nodes without yogaNode', () => {
+      const root = renderer.getRoot();
+      const node: any = {
+        type: 'custom',
+        children: [],
+        props: {},
+        style: {},
+      };
+
+      renderer.appendChild(root, node);
+
+      expect(() => renderer.render()).not.toThrow();
+    });
+
+    it('handles paddingX and paddingY', () => {
+      const box = renderer.createElement('box');
+
+      renderer.setProperty(box, 'style:paddingX', 2);
+      expect(box.style.paddingX).toBe(2);
+
+      renderer.setProperty(box, 'style:paddingY', 3);
+      expect(box.style.paddingY).toBe(3);
+    });
+
+    it('handles marginX and marginY', () => {
+      const box = renderer.createElement('box');
+
+      renderer.setProperty(box, 'style:marginX', 2);
+      expect(box.style.marginX).toBe(2);
+
+      renderer.setProperty(box, 'style:marginY', 3);
+      expect(box.style.marginY).toBe(3);
+    });
   });
 });
