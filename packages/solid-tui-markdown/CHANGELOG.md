@@ -1,5 +1,11 @@
 # @sylphx/solid-tui-markdown
 
+## 0.1.3
+
+### Patch Changes
+
+- 004253e: fix: test zen-style release workflow
+
 ## 0.1.2
 
 ### Patch Changes
