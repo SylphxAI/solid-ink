@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: View on GitHub
       link: https://github.com/SylphxAI/solid-tui
+    - theme: alt
+      text: npm Packages
+      link: https://www.npmjs.com/search?q=%40sylphx%2Fsolid-tui
 
 features:
   - icon: ⚡
@@ -106,10 +109,18 @@ npm install @sylphx/solid-tui @sylphx/solid-tui-inputs \
 
 ## Packages
 
-- **[@sylphx/solid-tui](https://github.com/SylphxAI/solid-tui/tree/main/packages/solid-tui)** - Core renderer (Box, Text, Spinner, hooks)
-- **[@sylphx/solid-tui-inputs](https://github.com/SylphxAI/solid-tui/tree/main/packages/inputs)** - Input components (TextInput, SelectInput, MultiSelect, etc.)
-- **[@sylphx/solid-tui-components](https://github.com/SylphxAI/solid-tui/tree/main/packages/solid-tui-components)** - UI components (ProgressBar, Table, Divider, etc.)
-- **[@sylphx/solid-tui-markdown](https://github.com/SylphxAI/solid-tui/tree/main/packages/solid-tui-markdown)** - Markdown rendering with syntax highlighting
-- **[@sylphx/solid-tui-visual](https://github.com/SylphxAI/solid-tui/tree/main/packages/solid-tui-visual)** - Visual effects (Gradient, BigText, Charts)
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
+  <a href="https://www.npmjs.com/package/@sylphx/solid-tui"><img src="https://img.shields.io/npm/v/@sylphx/solid-tui.svg" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/@sylphx/solid-tui-inputs"><img src="https://img.shields.io/npm/v/@sylphx/solid-tui-inputs.svg" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/@sylphx/solid-tui-components"><img src="https://img.shields.io/npm/v/@sylphx/solid-tui-components.svg" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/@sylphx/solid-tui-markdown"><img src="https://img.shields.io/npm/v/@sylphx/solid-tui-markdown.svg" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/@sylphx/solid-tui-visual"><img src="https://img.shields.io/npm/v/@sylphx/solid-tui-visual.svg" alt="npm version"></a>
+</div>
+
+- **[@sylphx/solid-tui](https://www.npmjs.com/package/@sylphx/solid-tui)** - Core renderer (Box, Text, Spinner, hooks)
+- **[@sylphx/solid-tui-inputs](https://www.npmjs.com/package/@sylphx/solid-tui-inputs)** - Input components (TextInput, SelectInput, MultiSelect, etc.)
+- **[@sylphx/solid-tui-components](https://www.npmjs.com/package/@sylphx/solid-tui-components)** - UI components (ProgressBar, Table, Divider, etc.)
+- **[@sylphx/solid-tui-markdown](https://www.npmjs.com/package/@sylphx/solid-tui-markdown)** - Markdown rendering with syntax highlighting
+- **[@sylphx/solid-tui-visual](https://www.npmjs.com/package/@sylphx/solid-tui-visual)** - Visual effects (Gradient, BigText, Charts)
 
 [Get Started →](/guide/getting-started)

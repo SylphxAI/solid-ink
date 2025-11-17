@@ -109,7 +109,8 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/SylphxAI/solid-tui' },
-      { icon: 'twitter', link: 'https://x.com/SylphxAI' },
+      { icon: 'x', link: 'https://x.com/SylphxAI' },
+      { icon: 'npm', link: 'https://www.npmjs.com/search?q=%40sylphx%2Fsolid-tui' },
     ],
 
     footer: {
