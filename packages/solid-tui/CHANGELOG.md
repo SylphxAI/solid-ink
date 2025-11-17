@@ -4,6 +4,17 @@
 
 ### Patch Changes
 
+- d55d72d: Add Bun runtime support (beta testing)
+
+  - Custom Babel plugin for JSX transformation
+  - Custom spread/insert for terminal renderer
+  - No DOM dependencies
+  - Users need bunfig.toml setup (see BUN_SETUP.md)
+
+## 1.0.4
+
+### Patch Changes
+
 - Add Bun runtime support with custom SolidJS plugin
 
   Implemented custom Babel plugin for Bun compatibility. Users need to configure bunfig.toml - see BUN_SETUP.md for instructions.
