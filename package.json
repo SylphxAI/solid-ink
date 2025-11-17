@@ -37,6 +37,8 @@
     "example:dashboard": "tsx examples/dashboard.tsx",
     "example:performance": "tsx examples/performance.tsx",
     "example:reactivity": "tsx examples/explain-reactivity.tsx",
+    "example:focus": "tsx examples/focus-demo.tsx",
+    "example:static": "tsx examples/static-transform-demo.tsx",
     "bench:react": "cd benchmark && npm run bench:react",
     "bench:solid": "cd benchmark && npm run bench:solid",
     "bench:both": "cd benchmark && npm run bench:react && npm run bench:solid",

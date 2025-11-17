@@ -1,6 +1,7 @@
 import { JSX, createEffect } from 'solid-js';
 import { Renderer } from './renderer.js';
 import { createSolidInkRenderer } from './reconciler.js';
+import { AppProvider, AppContext } from './hooks/useApp.js';
 import cliCursor from 'cli-cursor';
 
 export interface RenderOptions {
@@ -21,8 +22,46 @@ export function render(
   const renderer = new Renderer(output);
   const solidRenderer = createSolidInkRenderer(renderer);
 
-  // Mount component
-  solidRenderer.render(component, renderer.getRoot());
+  // Cleanup function
+  let cleanupCalled = false;
+  const cleanup = () => {
+    if (cleanupCalled) return;
+    cleanupCalled = true;
+
+    if (rafId) {
+      clearTimeout(rafId);
+    }
+
+    cliCursor.show(output);
+    renderer.cleanup();
+
+    if (process.stdin.isTTY) {
+      process.stdin.setRawMode(false);
+      process.stdin.off('data', handleCtrlC);
+    }
+  };
+
+  // Create app context
+  const appContext: AppContext = {
+    exit: (error?: Error) => {
+      cleanup();
+      if (error) {
+        console.error(error);
+        process.exit(1);
+      } else {
+        process.exit(0);
+      }
+    },
+    stdin: process.stdin,
+    stdout: output,
+    stderr: process.stderr,
+  };
+
+  // Mount component wrapped with AppProvider
+  solidRenderer.render(
+    () => <AppProvider value={appContext}>{component()}</AppProvider>,
+    renderer.getRoot()
+  );
 
   // Setup automatic re-rendering on changes
   let rafId: NodeJS.Timeout | null = null;
@@ -53,21 +92,6 @@ export function render(
     process.stdin.setRawMode(true);
     process.stdin.on('data', handleCtrlC);
   }
-
-  // Cleanup function
-  const cleanup = () => {
-    if (rafId) {
-      clearTimeout(rafId);
-    }
-
-    cliCursor.show(output);
-    renderer.cleanup();
-
-    if (process.stdin.isTTY) {
-      process.stdin.setRawMode(false);
-      process.stdin.off('data', handleCtrlC);
-    }
-  };
 
   // Auto cleanup on process exit
   process.once('exit', cleanup);
