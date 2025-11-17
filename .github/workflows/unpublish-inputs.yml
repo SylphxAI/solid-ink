@@ -1,0 +1,17 @@
+name: Unpublish Inputs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  unpublish:
+    name: Unpublish broken package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Unpublish package
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          npm unpublish @sylphx/solid-tui-inputs@0.1.0 --force
+          echo "Unpublished successfully"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
