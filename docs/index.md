@@ -19,7 +19,7 @@ hero:
 features:
   - icon: ⚡
     title: Fine-grained Reactivity
-    details: Only updates what changed. No Virtual DOM overhead, no reconciliation. Up to 5x faster than React-Ink.
+    details: Only updates what changed. No Virtual DOM overhead, no reconciliation. Up to 26x faster than React-Ink.
 
   - icon: 🎨
     title: Flexbox Layout
@@ -27,19 +27,19 @@ features:
 
   - icon: 🪶
     title: Lightweight
-    details: ~50KB bundle size with no reconciler overhead. Half the size of React-Ink with better performance.
+    details: ~50KB core bundle with modular packages. Install only what you need for optimal bundle size.
 
   - icon: 🎯
-    title: Familiar API
-    details: If you know SolidJS, you already know Solid-TUI. Simple, predictable, and powerful.
+    title: Modular Architecture
+    details: 5 focused packages - Core, Inputs, Components, Markdown, and Visual Effects. Use only what you need.
 
   - icon: 🔧
     title: TypeScript First
     details: Fully typed API with excellent IntelliSense support. Catch errors before runtime.
 
   - icon: 📦
-    title: Rich Components
-    details: Box, Text, Spinner, and hooks for input handling. Build complex UIs with ease.
+    title: 25+ Components
+    details: Rich component library - Input forms, data tables, charts, markdown rendering, gradients, and more.
 ---
 
 ## Quick Example
@@ -88,8 +88,28 @@ That's the power of fine-grained reactivity.
 
 ## Installation
 
-```bash
+::: code-group
+```bash [Core Only]
 npm install @sylphx/solid-tui solid-js
 ```
+
+```bash [With Input Components]
+npm install @sylphx/solid-tui @sylphx/solid-tui-inputs solid-js
+```
+
+```bash [All Packages]
+npm install @sylphx/solid-tui @sylphx/solid-tui-inputs \
+  @sylphx/solid-tui-components @sylphx/solid-tui-markdown \
+  @sylphx/solid-tui-visual solid-js
+```
+:::
+
+## Packages
+
+- **[@sylphx/solid-tui](https://github.com/SylphxAI/solid-tui/tree/main/packages/solid-tui)** - Core renderer (Box, Text, Spinner, hooks)
+- **[@sylphx/solid-tui-inputs](https://github.com/SylphxAI/solid-tui/tree/main/packages/inputs)** - Input components (TextInput, SelectInput, MultiSelect, etc.)
+- **[@sylphx/solid-tui-components](https://github.com/SylphxAI/solid-tui/tree/main/packages/solid-tui-components)** - UI components (ProgressBar, Table, Divider, etc.)
+- **[@sylphx/solid-tui-markdown](https://github.com/SylphxAI/solid-tui/tree/main/packages/solid-tui-markdown)** - Markdown rendering with syntax highlighting
+- **[@sylphx/solid-tui-visual](https://github.com/SylphxAI/solid-tui/tree/main/packages/solid-tui-visual)** - Visual effects (Gradient, BigText, Charts)
 
 [Get Started →](/guide/getting-started)

@@ -2,7 +2,9 @@
 
 ## Installation
 
-Install Solid-TUI and SolidJS:
+Solid-TUI is organized into focused packages. Install only what you need:
+
+### Core Package (Required)
 
 ::: code-group
 ```bash [npm]
@@ -13,8 +15,32 @@ npm install @sylphx/solid-tui solid-js
 yarn add @sylphx/solid-tui solid-js
 ```
 
-```bash [pnpm]
-pnpm add @sylphx/solid-tui solid-js
+```bash [bun]
+bun add @sylphx/solid-tui solid-js
+```
+:::
+
+### Optional Component Packages
+
+::: code-group
+```bash [npm]
+# Input components (TextInput, SelectInput, etc.)
+npm install @sylphx/solid-tui-inputs
+
+# UI components (ProgressBar, Table, etc.)
+npm install @sylphx/solid-tui-components
+
+# Markdown rendering
+npm install @sylphx/solid-tui-markdown
+
+# Visual effects (Gradient, BigText, Charts)
+npm install @sylphx/solid-tui-visual
+```
+
+```bash [All at once]
+npm install @sylphx/solid-tui @sylphx/solid-tui-inputs \
+  @sylphx/solid-tui-components @sylphx/solid-tui-markdown \
+  @sylphx/solid-tui-visual solid-js
 ```
 :::
 
@@ -141,9 +167,68 @@ function App() {
 render(() => <App />);
 ```
 
+## Using Component Packages
+
+### Input Components
+
+```tsx
+import { render, Box, Text } from '@sylphx/solid-tui';
+import { TextInput } from '@sylphx/solid-tui-inputs';
+import { createSignal } from 'solid-js';
+
+function Form() {
+  const [name, setName] = createSignal('');
+
+  return (
+    <Box flexDirection="column">
+      <Text>Enter your name:</Text>
+      <TextInput
+        value={name()}
+        onChange={setName}
+        placeholder="Type here..."
+      />
+      {name() && <Text color="green">Hello, {name()}!</Text>}
+    </Box>
+  );
+}
+
+render(<Form />);
+```
+
+### Data Visualization
+
+```tsx
+import { render, Box, Text } from '@sylphx/solid-tui';
+import { Chart } from '@sylphx/solid-tui-visual';
+import { ProgressBar } from '@sylphx/solid-tui-components';
+
+function Dashboard() {
+  const data = [
+    { label: 'Jan', value: 45 },
+    { label: 'Feb', value: 62 },
+    { label: 'Mar', value: 38 },
+  ];
+
+  return (
+    <Box flexDirection="column">
+      <Text bold>Sales Dashboard</Text>
+      <Chart data={data} type="bar" color="green" />
+      <Box marginTop={2}>
+        <ProgressBar value={75} total={100} width={30} />
+      </Box>
+    </Box>
+  );
+}
+
+render(<Dashboard />);
+```
+
 ## Next Steps
 
 - [Learn about fine-grained reactivity](/guide/reactivity)
 - [Explore the layout system](/guide/layout)
+- [Input Components API](/api/inputs/)
+- [UI Components API](/api/components/)
+- [Visual Effects API](/api/visual/)
 - [Browse examples](/examples/)
-- [Read the API reference](/api/components)
+- [Testing Guide](/guide/testing)

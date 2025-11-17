@@ -37,17 +37,57 @@ export default defineConfig({
           items: [
             { text: 'Architecture', link: '/guide/architecture' },
             { text: 'Performance', link: '/guide/performance' },
+            { text: 'Testing', link: '/guide/testing' },
             { text: 'Best Practices', link: '/guide/best-practices' },
           ],
         },
       ],
       '/api/': [
         {
-          text: 'API Reference',
+          text: 'Core',
           items: [
-            { text: 'Components', link: '/api/components' },
-            { text: 'Hooks', link: '/api/hooks' },
-            { text: 'Utilities', link: '/api/utilities' },
+            { text: 'Components', link: '/api/core/components' },
+            { text: 'Hooks', link: '/api/core/hooks' },
+            { text: 'Utilities', link: '/api/core/utilities' },
+          ],
+        },
+        {
+          text: 'Input Components',
+          items: [
+            { text: 'Overview', link: '/api/inputs/' },
+            { text: 'TextInput', link: '/api/inputs/text-input' },
+            { text: 'SelectInput', link: '/api/inputs/select-input' },
+            { text: 'MultiSelect', link: '/api/inputs/multi-select' },
+            { text: 'ConfirmInput', link: '/api/inputs/confirm-input' },
+            { text: 'QuickSearchInput', link: '/api/inputs/quick-search' },
+          ],
+        },
+        {
+          text: 'UI Components',
+          items: [
+            { text: 'Overview', link: '/api/components/' },
+            { text: 'ProgressBar', link: '/api/components/progress-bar' },
+            { text: 'Table', link: '/api/components/table' },
+            { text: 'Divider', link: '/api/components/divider' },
+            { text: 'Link', link: '/api/components/link' },
+            { text: 'TitledBox', link: '/api/components/titled-box' },
+          ],
+        },
+        {
+          text: 'Markdown',
+          items: [
+            { text: 'Overview', link: '/api/markdown/' },
+            { text: 'Markdown', link: '/api/markdown/markdown' },
+            { text: 'SyntaxHighlight', link: '/api/markdown/syntax-highlight' },
+          ],
+        },
+        {
+          text: 'Visual Effects',
+          items: [
+            { text: 'Overview', link: '/api/visual/' },
+            { text: 'Gradient', link: '/api/visual/gradient' },
+            { text: 'BigText', link: '/api/visual/big-text' },
+            { text: 'Chart', link: '/api/visual/chart' },
           ],
         },
       ],
