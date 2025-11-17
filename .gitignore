@@ -3,3 +3,11 @@ dist/
 *.log
 .DS_Store
 *.tsbuildinfo
+.vercel/
+.turbo/
+
+# Build artifacts in src
+*.jsx
+*.d.ts
+*.d.ts.map
+*.js.map
