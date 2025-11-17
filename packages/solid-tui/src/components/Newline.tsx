@@ -1,4 +1,4 @@
-import { Text } from './Text.js';
+import { Text } from './Text.jsx';
 
 export function Newline() {
   return <Text>{'\n'}</Text>;

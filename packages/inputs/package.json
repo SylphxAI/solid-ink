@@ -45,7 +45,7 @@
     "prompt"
   ],
   "dependencies": {
-    "@sylphx/solid-tui": "workspace:*",
+    "@sylphx/solid-tui": "^1.0.2",
     "solid-js": "^1.8.0"
   },
   "devDependencies": {

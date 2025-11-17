@@ -44,7 +44,7 @@
     "effects"
   ],
   "dependencies": {
-    "@sylphx/solid-tui": "workspace:*",
+    "@sylphx/solid-tui": "^1.0.2",
     "gradient-string": "^2.0.2",
     "figlet": "^1.7.0",
     "solid-js": "^1.8.0"

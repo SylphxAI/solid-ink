@@ -1,0 +1,3 @@
+# Configure export conditions priority
+# Put "browser" before "node" for solid-js compatibility
+conditions = ["browser", "import", "module", "default"]

@@ -1,7 +1,7 @@
 import cliCursor from 'cli-cursor';
 import { createEffect, type JSX } from 'solid-js';
-import { type AppContext, AppProvider } from './hooks/useApp.js';
-import { FocusProvider } from './hooks/useFocus.js';
+import { type AppContext, AppProvider } from './hooks/useApp.jsx';
+import { FocusProvider } from './hooks/useFocus.jsx';
 import { createSolidInkRenderer } from './reconciler.js';
 import { Renderer } from './renderer.js';
 

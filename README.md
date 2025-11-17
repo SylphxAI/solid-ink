@@ -85,41 +85,6 @@ npm install @sylphx/solid-tui-markdown
 npm install @sylphx/solid-tui-visual
 ```
 
-### Using with Bun
-
-When using Bun, you need to configure module resolution to use browser export conditions:
-
-**Option 1: CLI Flag (Recommended)**
-
-```bash
-bun --conditions=browser run src/index.tsx
-```
-
-Add to your `package.json` scripts:
-
-```json
-{
-  "scripts": {
-    "dev": "bun --conditions=browser run src/index.tsx",
-    "start": "bun --conditions=browser run src/index.tsx"
-  }
-}
-```
-
-**Option 2: Configure in tsconfig.json**
-
-```json
-{
-  "compilerOptions": {
-    "jsx": "preserve",
-    "jsxImportSource": "solid-js",
-    "types": ["bun-types"]
-  }
-}
-```
-
-> **Why is this needed?** Solid-TUI uses `solid-js/universal` which requires browser-specific exports. Bun defaults to "node" export conditions, but solid-tui needs "browser" conditions to access the correct SolidJS APIs.
-
 ### Basic Example
 
 ```tsx

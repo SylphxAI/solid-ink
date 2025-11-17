@@ -15,10 +15,18 @@
   },
   "exports": {
     ".": {
+      "bun": {
+        "import": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
     "./testing": {
+      "bun": {
+        "import": "./dist/testing.jsx",
+        "types": "./dist/testing.d.ts"
+      },
       "import": "./dist/testing.jsx",
       "types": "./dist/testing.d.ts"
     }

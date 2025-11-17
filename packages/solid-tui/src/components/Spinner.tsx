@@ -1,5 +1,5 @@
 import { createSignal, onCleanup } from 'solid-js';
-import { Text, type TextProps } from './Text.js';
+import { Text, type TextProps } from './Text.jsx';
 
 export interface SpinnerProps extends Omit<TextProps, 'children'> {
   type?: 'dots' | 'line' | 'arc' | 'arrow';
