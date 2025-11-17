@@ -10,7 +10,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 permissions:
   contents: write
   pull-requests: write
-  id-token: write
+  id-token: write  # Required for OIDC trusted publishing
 
 jobs:
   release:
@@ -31,23 +31,14 @@ jobs:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Update npm for trusted publishing
+        run: npm install -g npm@latest
+
       - name: Install dependencies
         run: bun install
 
       - name: Build packages
         run: bun run build
-
-      - name: Configure npm authentication
-        run: |
-          # Setup Node.js creates .npmrc in temp dir, we need to update it
-          if [ -n "$NPM_CONFIG_USERCONFIG" ]; then
-            echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > "$NPM_CONFIG_USERCONFIG"
-          else
-            echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-          fi
-          echo "npm config:"
-          npm config get registry
-          npm whoami
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
@@ -56,4 +47,3 @@ jobs:
           publish: bun run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
