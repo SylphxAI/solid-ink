@@ -39,8 +39,15 @@ jobs:
 
       - name: Configure npm authentication
         run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-          cat ~/.npmrc
+          # Setup Node.js creates .npmrc in temp dir, we need to update it
+          if [ -n "$NPM_CONFIG_USERCONFIG" ]; then
+            echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > "$NPM_CONFIG_USERCONFIG"
+          else
+            echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          fi
+          echo "npm config:"
+          npm config get registry
+          npm config get _authToken
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
