@@ -10,4 +10,6 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   release:
     uses: SylphxAI/.github/.github/workflows/publish-npm.yml@main
+    with:
+      version-command: 'bun run version'
     secrets: inherit
