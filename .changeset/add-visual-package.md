@@ -1,0 +1,26 @@
+---
+"@sylphx/solid-tui-visual": minor
+---
+
+Initial release of solid-tui-visual package
+
+- Gradient: Text gradient effects with multiple built-in themes
+  - 13 pre-defined gradients (rainbow, atlas, cristal, teen, mind, morning, vice, passion, fruit, instagram, retro, summer, pastel)
+  - Custom color arrays support
+  - Powered by gradient-string
+
+- BigText: ASCII art text rendering
+  - Multiple font options via figlet
+  - Left, center, and right alignment
+  - Color customization
+  - Automatic fallback to default font
+
+- Chart: Terminal-based data visualization
+  - Bar chart with horizontal bars
+  - Line chart with connecting points
+  - Configurable dimensions (width, height)
+  - Optional value labels and axis display
+  - Color customization
+  - Auto-scaling based on data
+
+- Built with SolidJS fine-grained reactivity for blazing fast terminal UIs
