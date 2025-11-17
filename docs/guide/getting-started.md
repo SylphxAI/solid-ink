@@ -6,15 +6,15 @@ Install Solid-Ink and SolidJS:
 
 ::: code-group
 ```bash [npm]
-npm install solid-ink solid-js
+npm install @sylphx/solid-ink solid-js
 ```
 
 ```bash [yarn]
-yarn add solid-ink solid-js
+yarn add @sylphx/solid-ink solid-js
 ```
 
 ```bash [pnpm]
-pnpm add solid-ink solid-js
+pnpm add @sylphx/solid-ink solid-js
 ```
 :::
 
@@ -64,7 +64,7 @@ Use SolidJS's `createSignal` for reactive state:
 
 ```tsx
 import { createSignal } from 'solid-js';
-import { render, Box, Text } from 'solid-ink';
+import { render, Box, Text } from '@sylphx/solid-ink';
 
 function Counter() {
   const [count, setCount] = createSignal(0);
@@ -118,7 +118,7 @@ Use the `useInput` hook for keyboard input:
 
 ```tsx
 import { createSignal } from 'solid-js';
-import { render, Box, Text, useInput } from 'solid-ink';
+import { render, Box, Text, useInput } from '@sylphx/solid-ink';
 
 function App() {
   const [key, setKey] = createSignal('');

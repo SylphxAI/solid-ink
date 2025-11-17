@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress';
 export default defineConfig({
   title: 'Solid-Ink',
   description: 'SolidJS renderer for terminal/CLI applications',
+  base: '/',
 
   themeConfig: {
     nav: [
@@ -65,12 +66,13 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/yourusername/solid-ink' },
+      { icon: 'github', link: 'https://github.com/SylphxAI/solid-ink' },
+      { icon: 'twitter', link: 'https://x.com/SylphxAI' },
     ],
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2024',
+      copyright: 'Copyright © 2024 SylphX',
     },
 
     search: {

@@ -2,10 +2,15 @@
 
 > SolidJS renderer for building blazing fast terminal/CLI applications
 
-[![npm version](https://img.shields.io/npm/v/solid-ink.svg)](https://www.npmjs.com/package/solid-ink)
+[![npm version](https://img.shields.io/npm/v/@sylphx/solid-ink.svg)](https://www.npmjs.com/package/@sylphx/solid-ink)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Twitter](https://img.shields.io/twitter/follow/SylphxAI?style=social)](https://x.com/SylphxAI)
 
 Solid-Ink brings SolidJS's fine-grained reactivity to terminal UIs. Build interactive CLIs with the performance and simplicity of SolidJS.
+
+📚 **[Documentation](https://solid-ink.sylphx.com)** ·
+🐦 **[Twitter](https://x.com/SylphxAI)** ·
+💬 **[Issues](https://github.com/SylphxAI/solid-ink/issues)**
 
 ## ⚡ Performance First
 
@@ -30,14 +35,14 @@ Solid-Ink brings SolidJS's fine-grained reactivity to terminal UIs. Build intera
 ## 📦 Installation
 
 ```bash
-npm install solid-ink solid-js
+npm install @sylphx/solid-ink solid-js
 ```
 
 ## 🎯 Quick Start
 
 ```tsx
 import { createSignal } from 'solid-js';
-import { render, Box, Text } from 'solid-ink';
+import { render, Box, Text } from '@sylphx/solid-ink';
 
 function Counter() {
   const [count, setCount] = createSignal(0);
@@ -97,7 +102,7 @@ When updating 1 item in a 1000-item list:
 
 ```tsx
 import { createSignal, For } from 'solid-js';
-import { render, Box, Text, useInput } from 'solid-ink';
+import { render, Box, Text, useInput } from '@sylphx/solid-ink';
 
 function TodoList() {
   const items = ['Buy milk', 'Walk dog', 'Write code'];
@@ -130,7 +135,7 @@ render(() => <TodoList />);
 
 ```tsx
 import { createSignal } from 'solid-js';
-import { render, Box, Text, Spacer } from 'solid-ink';
+import { render, Box, Text, Spacer } from '@sylphx/solid-ink';
 
 function Dashboard() {
   const [cpu, setCpu] = createSignal(0);
@@ -369,11 +374,11 @@ npm run docs:build  # Build docs
 
 ## 🤝 Contributing
 
-Contributions welcome! Please read [CONTRIBUTING.md](./CONTRIBUTING.md) first.
+Contributions welcome!
 
 ## 📄 License
 
-MIT © 2024
+MIT © 2024 [SylphX](https://x.com/SylphxAI)
 
 ## 🙏 Acknowledgments
 

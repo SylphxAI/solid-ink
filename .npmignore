@@ -1,0 +1,26 @@
+# Development
+src/
+test/
+examples/
+benchmark/
+docs/
+
+# Config
+tsconfig.json
+vitest.config.ts
+vercel.json
+
+# Git
+.git
+.gitignore
+.github/
+
+# Changesets
+.changeset/
+
+# Misc
+*.log
+.DS_Store
+quick-start.sh
+ARCHITECTURE.md
+GETTING_STARTED.md

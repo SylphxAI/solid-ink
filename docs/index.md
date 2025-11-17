@@ -14,7 +14,7 @@ hero:
       link: /guide/why-solid-ink
     - theme: alt
       text: View on GitHub
-      link: https://github.com/yourusername/solid-ink
+      link: https://github.com/SylphxAI/solid-ink
 
 features:
   - icon: ⚡
@@ -46,7 +46,7 @@ features:
 
 ```tsx
 import { createSignal } from 'solid-js';
-import { render, Box, Text } from 'solid-ink';
+import { render, Box, Text } from '@sylphx/solid-ink';
 
 function Counter() {
   const [count, setCount] = createSignal(0);
@@ -89,7 +89,7 @@ That's the power of fine-grained reactivity.
 ## Installation
 
 ```bash
-npm install solid-ink solid-js
+npm install @sylphx/solid-ink solid-js
 ```
 
 [Get Started →](/guide/getting-started)
