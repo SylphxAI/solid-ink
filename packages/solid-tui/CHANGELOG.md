@@ -4,6 +4,14 @@
 
 ### Patch Changes
 
+- Add Bun runtime support with custom SolidJS plugin
+
+  Implemented custom Babel plugin for Bun compatibility. Users need to configure bunfig.toml - see BUN_SETUP.md for instructions.
+
+## 1.0.4
+
+### Patch Changes
+
 - Fix Bun compatibility by removing Provider components and using global context injection
 
 ## 1.0.3

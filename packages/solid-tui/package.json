@@ -1,6 +1,6 @@
 {
   "name": "@sylphx/solid-tui",
-  "version": "1.0.4-debug.8",
+  "version": "1.0.4",
   "description": "SolidJS renderer for blazing fast terminal user interfaces with fine-grained reactivity",
   "type": "module",
   "main": "./dist/index.js",
@@ -29,7 +29,8 @@
   },
   "files": [
     "dist",
-    "dist-bun"
+    "dist-bun",
+    "bun"
   ],
   "scripts": {
     "build": "tsc && cd ../.. && bun run build-solid-tui.ts",
