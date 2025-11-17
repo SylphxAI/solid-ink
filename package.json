@@ -21,7 +21,7 @@
     "version": "changeset version",
     "release": "bun run build && changeset publish",
     "ci:version": "changeset version && node scripts/fix-workspace-deps.js && bun update",
-    "ci:publish": "for dir in packages/*; do (cd \"$dir\" && npm publish --access public || true); done && changeset tag"
+    "ci:publish": "for dir in packages/*; do (cd \"$dir\" && NODE_AUTH_TOKEN=$NODE_AUTH_TOKEN npm publish --access public || true); done && changeset tag"
   },
   "devDependencies": {
     "@biomejs/biome": "latest",
