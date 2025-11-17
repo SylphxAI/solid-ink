@@ -20,7 +20,7 @@
     "changeset": "changeset",
     "version": "changeset version",
     "prepare-publish": "bun scripts/prepare-publish.ts",
-    "release": "npm run build && npm run prepare-publish && changeset publish"
+    "release": "bun run build && bun run prepare-publish && changeset publish"
   },
   "devDependencies": {
     "@biomejs/biome": "latest",
