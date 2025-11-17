@@ -1,0 +1,36 @@
+name: Test Manual Publish
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test Manual Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build solid-tui-inputs
+        run: cd packages/inputs && bun run build
+
+      - name: Prepare package
+        run: bun run prepare-publish
+
+      - name: Try manual publish
+        run: |
+          cd packages/inputs
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          npm whoami
+          npm publish --dry-run
+          npm publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
