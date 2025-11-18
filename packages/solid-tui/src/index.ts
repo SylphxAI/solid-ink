@@ -24,3 +24,20 @@ export type { RenderOptions} from './render.jsx';
 export { render } from './render.jsx';
 export type { RenderResult } from './testing.jsx';
 export { render as renderTest } from './testing.jsx';
+
+// Re-export JSX runtime functions for Bun plugin
+export {
+  createElement,
+  createTextNode,
+  insertNode,
+  setProp,
+  spread,
+  insert,
+  createComponent,
+  mergeProps,
+  effect,
+  memo,
+  _render,
+  setGlobalRenderer,
+  createSolidInkRenderer,
+} from './reconciler.js';

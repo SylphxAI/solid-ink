@@ -24,8 +24,8 @@ const solidUniversalPlugin: BunPlugin = {
               {
                 // Use solid-js/universal instead of solid-js/web
                 generate: "universal",
-                // Import JSX runtime functions from our reconciler
-                moduleName: "@sylphx/solid-tui/reconciler",
+                // Import JSX runtime functions from main package
+                moduleName: "@sylphx/solid-tui",
               },
             ],
             [ts, {}],

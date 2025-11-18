@@ -1,5 +1,16 @@
 # @sylphx/solid-tui
 
+## 1.0.7
+
+### Patch Changes
+
+- Fix monorepo module resolution by using main export for JSX runtime
+
+  - Export JSX runtime functions from main package entry point
+  - Change plugin moduleName from `@sylphx/solid-tui/reconciler` to `@sylphx/solid-tui`
+  - Fixes subpath export resolution issues in monorepo workspaces
+  - Matches pattern used by @opentui/solid
+
 ## 1.0.6
 
 ### Patch Changes
