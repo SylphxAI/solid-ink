@@ -1,5 +1,15 @@
 # @sylphx/solid-tui
 
+## 1.0.8
+
+### Patch Changes
+
+- Fix preload export format for proper module resolution
+
+  - Change `"./preload": "./bun/preload.ts"` to `"./preload": { "import": "./bun/preload.ts" }`
+  - Matches export pattern used by @opentui/solid
+  - Fixes "preload not found" error in some environments
+
 ## 1.0.7
 
 ### Patch Changes

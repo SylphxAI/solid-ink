@@ -1,0 +1,9 @@
+{
+  "name": "bun-demo",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@sylphx/solid-tui": "^1.0.7",
+    "solid-js": "^1.9.10"
+  }
+}

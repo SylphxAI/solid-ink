@@ -1,0 +1,2 @@
+conditions = ["browser", "import", "module", "default"]
+preload = ["@sylphx/solid-tui/preload"]
