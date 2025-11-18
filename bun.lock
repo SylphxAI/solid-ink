@@ -42,9 +42,12 @@
     },
     "packages/solid-tui": {
       "name": "@sylphx/solid-tui",
-      "version": "1.0.4-debug.8",
+      "version": "1.0.4",
       "dependencies": {
+        "@babel/core": "^7.23.0",
+        "@babel/preset-typescript": "^7.23.0",
         "ansi-escapes": "^6.2.0",
+        "babel-preset-solid": "^1.8.0",
         "chalk": "^5.3.0",
         "cli-cursor": "^4.0.0",
         "solid-js": "^1.8.0",
@@ -982,14 +985,6 @@
     "@manypkg/get-packages/@changesets/types": ["@changesets/types@4.1.0", "", {}, "sha512-LDQvVDv5Kb50ny2s25Fhm3d9QSZimsoUGBsUioj6MC3qbMUCuC8GPIvk/M6IvXx3lYhAs0lwWUQLb+VIEUCECw=="],
 
     "@manypkg/get-packages/fs-extra": ["fs-extra@8.1.0", "", { "dependencies": { "graceful-fs": "^4.2.0", "jsonfile": "^4.0.0", "universalify": "^0.1.0" } }, "sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g=="],
-
-    "@sylphx/solid-tui-components/@sylphx/solid-tui": ["@sylphx/solid-tui@1.0.3", "", { "dependencies": { "ansi-escapes": "^6.2.0", "chalk": "^5.3.0", "cli-cursor": "^4.0.0", "solid-js": "^1.8.0", "yoga-layout": "^3.0.0" } }, "sha512-o0lqDTe3mgEyTUaT4yUSUyfRBHV8aGiHCoYy7fcjZojd0V4/xavO1qwlCcoO2chvKZ4Ykx5vlGae8567mjhiPQ=="],
-
-    "@sylphx/solid-tui-inputs/@sylphx/solid-tui": ["@sylphx/solid-tui@1.0.3", "", { "dependencies": { "ansi-escapes": "^6.2.0", "chalk": "^5.3.0", "cli-cursor": "^4.0.0", "solid-js": "^1.8.0", "yoga-layout": "^3.0.0" } }, "sha512-o0lqDTe3mgEyTUaT4yUSUyfRBHV8aGiHCoYy7fcjZojd0V4/xavO1qwlCcoO2chvKZ4Ykx5vlGae8567mjhiPQ=="],
-
-    "@sylphx/solid-tui-markdown/@sylphx/solid-tui": ["@sylphx/solid-tui@1.0.3", "", { "dependencies": { "ansi-escapes": "^6.2.0", "chalk": "^5.3.0", "cli-cursor": "^4.0.0", "solid-js": "^1.8.0", "yoga-layout": "^3.0.0" } }, "sha512-o0lqDTe3mgEyTUaT4yUSUyfRBHV8aGiHCoYy7fcjZojd0V4/xavO1qwlCcoO2chvKZ4Ykx5vlGae8567mjhiPQ=="],
-
-    "@sylphx/solid-tui-visual/@sylphx/solid-tui": ["@sylphx/solid-tui@1.0.3", "", { "dependencies": { "ansi-escapes": "^6.2.0", "chalk": "^5.3.0", "cli-cursor": "^4.0.0", "solid-js": "^1.8.0", "yoga-layout": "^3.0.0" } }, "sha512-o0lqDTe3mgEyTUaT4yUSUyfRBHV8aGiHCoYy7fcjZojd0V4/xavO1qwlCcoO2chvKZ4Ykx5vlGae8567mjhiPQ=="],
 
     "@vitest/runner/p-limit": ["p-limit@5.0.0", "", { "dependencies": { "yocto-queue": "^1.0.0" } }, "sha512-/Eaoq+QyLSiXQ4lyYV23f14mZRQcXnxfHrN0vCai+ak9G0pp9iEQukIIZq5NccEvwRB8PUnZT0KsOoDCINS1qQ=="],
 

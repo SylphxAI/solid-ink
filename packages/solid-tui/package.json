@@ -68,7 +68,10 @@
     "fine-grained"
   ],
   "dependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-typescript": "^7.23.0",
     "ansi-escapes": "^6.2.0",
+    "babel-preset-solid": "^1.8.0",
     "chalk": "^5.3.0",
     "cli-cursor": "^4.0.0",
     "solid-js": "^1.8.0",
