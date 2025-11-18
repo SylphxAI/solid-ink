@@ -1,5 +1,15 @@
 # @sylphx/solid-tui
 
+## 1.0.6
+
+### Patch Changes
+
+- Add short preload path export for simpler Bun configuration
+
+  - Add `./preload` export to package.json
+  - Users can now use `preload = ["@sylphx/solid-tui/preload"]`
+  - Instead of long path `./node_modules/@sylphx/solid-tui/bun/preload.ts`
+
 ## 1.0.5
 
 ### Patch Changes

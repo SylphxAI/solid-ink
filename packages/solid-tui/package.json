@@ -1,6 +1,6 @@
 {
   "name": "@sylphx/solid-tui",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "SolidJS renderer for blazing fast terminal user interfaces with fine-grained reactivity",
   "type": "module",
   "main": "./dist/index.js",
@@ -25,7 +25,8 @@
     "./reconciler": {
       "import": "./dist/reconciler.js",
       "types": "./dist/reconciler.d.ts"
-    }
+    },
+    "./preload": "./bun/preload.ts"
   },
   "files": [
     "dist",
