@@ -1,6 +1,6 @@
 {
   "name": "@sylphx/solid-tui",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "SolidJS renderer for blazing fast terminal user interfaces with fine-grained reactivity",
   "type": "module",
   "main": "./dist/index.js",
