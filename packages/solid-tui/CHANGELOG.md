@@ -1,5 +1,15 @@
 # @sylphx/solid-tui
 
+## 1.0.5
+
+### Patch Changes
+
+- 84ef0e2: Fix Bun support by adding required Babel dependencies
+
+  - Add @babel/core, @babel/preset-typescript, and babel-preset-solid as dependencies
+  - These are required by the Bun plugin for JSX transformation
+  - Fixes "Cannot find module '@babel/core'" error
+
 ## 1.0.4
 
 ### Patch Changes
