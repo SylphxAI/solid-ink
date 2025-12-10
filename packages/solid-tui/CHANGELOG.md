@@ -1,5 +1,23 @@
 # @sylphx/solid-tui
 
+## 1.1.0 (2025-12-10)
+
+### ✨ Features
+
+- **bun:** add custom SolidJS plugin for Bun compatibility ([3d98b10](https://github.com/SylphxAI/solid-tui/commit/3d98b10f70bf19fb995ec4c3feab4113c108ef6e))
+
+### 🐛 Bug Fixes
+
+- **solid-tui:** add Babel dependencies for Bun plugin ([84ef0e2](https://github.com/SylphxAI/solid-tui/commit/84ef0e26d4891cb5067a7b4a37f54d42f3748d87))
+- **solid-tui:** remove Provider components for Bun compatibility ([1852cdd](https://github.com/SylphxAI/solid-tui/commit/1852cdd680ef4775fccac56bd8e4ee80594a9b12))
+
+### 🔧 Chores
+
+- prepare 1.0.4-beta.1 for CI release ([182e8ea](https://github.com/SylphxAI/solid-tui/commit/182e8eab8a89cd88e83d6f55e7c86fcf9fcc311d))
+- version 1.0.4 with Bun support ([a6271d8](https://github.com/SylphxAI/solid-tui/commit/a6271d839c77010a35f4ce32684caf1b26d38890))
+- add dist-bun to gitignore and update tsconfig ([9d17710](https://github.com/SylphxAI/solid-tui/commit/9d177106208b6dad15fac5096cfbbee72c508e9a))
+- bump version to 1.0.4-debug.8 ([3c0d771](https://github.com/SylphxAI/solid-tui/commit/3c0d7715bf3d827d20f4e22e6e275c0842fd9e11))
+
 ## 1.0.8
 
 ### Patch Changes
