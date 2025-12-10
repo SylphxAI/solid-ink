@@ -1,98 +1,98 @@
 {
-  "name": "@sylphx/solid-tui",
-  "version": "1.0.8",
-  "description": "SolidJS renderer for blazing fast terminal user interfaces with fine-grained reactivity",
-  "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/SylphxAI/solid-tui.git"
-  },
-  "homepage": "https://solid-tui.sylphx.com",
-  "bugs": {
-    "url": "https://github.com/SylphxAI/solid-tui/issues"
-  },
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./testing": {
-      "import": "./dist/testing.jsx",
-      "types": "./dist/testing.d.ts"
-    },
-    "./reconciler": {
-      "import": "./dist/reconciler.js",
-      "types": "./dist/reconciler.d.ts"
-    },
-    "./preload": {
-      "import": "./bun/preload.ts"
-    }
-  },
-  "files": [
-    "dist",
-    "dist-bun",
-    "bun"
-  ],
-  "scripts": {
-    "build": "tsc && cd ../.. && bun run build-solid-tui.ts",
-    "dev": "tsc --watch",
-    "test": "vitest",
-    "test:run": "vitest run",
-    "test:coverage": "vitest run --coverage",
-    "changeset": "changeset",
-    "version": "changeset version",
-    "release": "npm run build && changeset publish",
-    "example:basic": "tsx examples/basic.tsx",
-    "example:layout": "tsx examples/layout.tsx",
-    "example:interactive": "tsx examples/interactive.tsx",
-    "example:spinner": "tsx examples/spinner.tsx",
-    "example:dashboard": "tsx examples/dashboard.tsx",
-    "example:performance": "tsx examples/performance.tsx",
-    "example:reactivity": "tsx examples/explain-reactivity.tsx",
-    "example:focus": "tsx examples/focus-demo.tsx",
-    "example:static": "tsx examples/static-transform-demo.tsx",
-    "bench:react": "cd benchmark && npm run bench:react",
-    "bench:solid": "cd benchmark && npm run bench:solid",
-    "bench:both": "cd benchmark && npm run bench:react && npm run bench:solid",
-    "bench:compare": "cd benchmark && npm run bench:compare",
-    "docs:dev": "cd docs && npm run dev",
-    "docs:build": "cd docs && npm run build",
-    "docs:preview": "cd docs && npm run preview"
-  },
-  "keywords": [
-    "solidjs",
-    "terminal",
-    "cli",
-    "ink",
-    "tui",
-    "reactive",
-    "fine-grained"
-  ],
-  "dependencies": {
-    "@babel/core": "^7.23.0",
-    "@babel/preset-typescript": "^7.23.0",
-    "ansi-escapes": "^6.2.0",
-    "babel-preset-solid": "^1.8.0",
-    "chalk": "^5.3.0",
-    "cli-cursor": "^4.0.0",
-    "solid-js": "^1.8.0",
-    "yoga-layout": "^3.0.0"
-  },
-  "devDependencies": {
-    "@changesets/cli": "^2.29.7",
-    "@types/node": "^20.0.0",
-    "tsx": "^4.7.0",
-    "typescript": "^5.3.0",
-    "vite-plugin-solid": "^2.11.10",
-    "vitest": "^1.0.0"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  }
+	"name": "@sylphx/solid-tui",
+	"version": "1.1.0",
+	"description": "SolidJS renderer for blazing fast terminal user interfaces with fine-grained reactivity",
+	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/SylphxAI/solid-tui.git"
+	},
+	"homepage": "https://solid-tui.sylphx.com",
+	"bugs": {
+		"url": "https://github.com/SylphxAI/solid-tui/issues"
+	},
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./testing": {
+			"import": "./dist/testing.jsx",
+			"types": "./dist/testing.d.ts"
+		},
+		"./reconciler": {
+			"import": "./dist/reconciler.js",
+			"types": "./dist/reconciler.d.ts"
+		},
+		"./preload": {
+			"import": "./bun/preload.ts"
+		}
+	},
+	"files": [
+		"dist",
+		"dist-bun",
+		"bun"
+	],
+	"scripts": {
+		"build": "tsc && cd ../.. && bun run build-solid-tui.ts",
+		"dev": "tsc --watch",
+		"test": "vitest",
+		"test:run": "vitest run",
+		"test:coverage": "vitest run --coverage",
+		"changeset": "changeset",
+		"version": "changeset version",
+		"release": "npm run build && changeset publish",
+		"example:basic": "tsx examples/basic.tsx",
+		"example:layout": "tsx examples/layout.tsx",
+		"example:interactive": "tsx examples/interactive.tsx",
+		"example:spinner": "tsx examples/spinner.tsx",
+		"example:dashboard": "tsx examples/dashboard.tsx",
+		"example:performance": "tsx examples/performance.tsx",
+		"example:reactivity": "tsx examples/explain-reactivity.tsx",
+		"example:focus": "tsx examples/focus-demo.tsx",
+		"example:static": "tsx examples/static-transform-demo.tsx",
+		"bench:react": "cd benchmark && npm run bench:react",
+		"bench:solid": "cd benchmark && npm run bench:solid",
+		"bench:both": "cd benchmark && npm run bench:react && npm run bench:solid",
+		"bench:compare": "cd benchmark && npm run bench:compare",
+		"docs:dev": "cd docs && npm run dev",
+		"docs:build": "cd docs && npm run build",
+		"docs:preview": "cd docs && npm run preview"
+	},
+	"keywords": [
+		"solidjs",
+		"terminal",
+		"cli",
+		"ink",
+		"tui",
+		"reactive",
+		"fine-grained"
+	],
+	"dependencies": {
+		"@babel/core": "^7.23.0",
+		"@babel/preset-typescript": "^7.23.0",
+		"ansi-escapes": "^6.2.0",
+		"babel-preset-solid": "^1.8.0",
+		"chalk": "^5.3.0",
+		"cli-cursor": "^4.0.0",
+		"solid-js": "^1.8.0",
+		"yoga-layout": "^3.0.0"
+	},
+	"devDependencies": {
+		"@changesets/cli": "^2.29.7",
+		"@types/node": "^20.0.0",
+		"tsx": "^4.7.0",
+		"typescript": "^5.3.0",
+		"vite-plugin-solid": "^2.11.10",
+		"vitest": "^1.0.0"
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	}
 }
